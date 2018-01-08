@@ -31,7 +31,7 @@ public class Menu extends Application {
 
             GridPane root = (GridPane) FXMLLoader.load(getClass().getResource("MenuFXML.fxml"));
             Scene scene = new Scene(root, 400, 350);
-            //scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource("menuApplication.css").toExternalForm());
             primaryStage.setTitle("Menu");
             primaryStage.setScene(scene);
             primaryStage.show();

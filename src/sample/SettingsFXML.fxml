@@ -14,72 +14,44 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.layout.HBox?>
 
-<GridPane alignment="center" hgap="10" prefHeight="249.0" prefWidth="466.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerSettings">
+<GridPane alignment="center" hgap="10" prefHeight="478.0" prefWidth="466.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SettingsController">
     <padding><Insets bottom="10" left="25" right="25" top="25" /></padding>
    <children>
-       <Text text="Settings" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0" />
+       <Text id="SettingsText" text="Settings" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0" />
        <Label text="opening player:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
 
        <Label text="color player 1" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-       <HBox GridPane.columnIndex="1" GridPane.rowIndex="5">
-         <children>
-            <MenuButton fx:id="color_player2" layoutX="9.0" layoutY="10.0" mnemonicParsing="false" text="choose">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="black" />
-                  <MenuItem mnemonicParsing="false" text="white" />
-                  <MenuItem mnemonicParsing="false" text="purple" />
-                  <MenuItem mnemonicParsing="false" text="red" />
-               </items>
-            </MenuButton>
-         </children></HBox>
-       <!--<Text fx:id="messageText" GridPane.columnIndex="0" GridPane.rowIndex="6" />-->
-      <MenuButton fx:id="open_player" mnemonicParsing="false" prefHeight="25.0" prefWidth="83.0" text="choose" GridPane.columnIndex="1" GridPane.rowIndex="1">
-        <items>
-          <MenuItem mnemonicParsing="false" text="player 1" />
-          <MenuItem mnemonicParsing="false" text="player 2" />
-        </items>
-      </MenuButton>
-      <MenuButton fx:id="color_player1" mnemonicParsing="false" text="choose" GridPane.columnIndex="1" GridPane.rowIndex="2">
-        <items>
-          <MenuItem mnemonicParsing="false" text="black" />
-          <MenuItem mnemonicParsing="false" text="white" />
-            <MenuItem mnemonicParsing="false" text="purple" />
-            <MenuItem mnemonicParsing="false" text="red" />
-        </items>
-      </MenuButton>
-      <Label layoutX="35.0" layoutY="100.0" text="color player 2" GridPane.rowIndex="5" />
-      <Label layoutX="35.0" layoutY="155.0" text="board size" GridPane.rowIndex="6" />
-      <MenuButton fx:id="board_size" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" text="choose" GridPane.columnIndex="1" GridPane.rowIndex="6">
-         <items>
-            <MenuItem mnemonicParsing="false" text="4*4" />
-            <MenuItem mnemonicParsing="false" text="5*5" />
-            <MenuItem mnemonicParsing="false" text="6*6" />
-            <MenuItem mnemonicParsing="false" text="7*7" />
-         </items>
-      </MenuButton>
+       <HBox GridPane.columnIndex="1" GridPane.rowIndex="6" />
+      <Label layoutX="35.0" layoutY="100.0" text="color player 2" GridPane.rowIndex="3" />
+      <Label layoutX="35.0" layoutY="155.0" text="board size" GridPane.rowIndex="4" />
       <HBox alignment="bottom_right" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="10">
          <children>
             <Button fx:id="closeButton" mnemonicParsing="false" onAction="#ok" text="ok" />
          </children>
       </HBox>
+      <ComboBox fx:id="open_player" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+      <ComboBox fx:id="color_player1" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+      <ComboBox fx:id="board_size" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="4" />
+      <ComboBox fx:id="color_player2" prefWidth="150.0" GridPane.columnIndex="5" GridPane.rowIndex="3" />
    </children>
    <columnConstraints>
-      <ColumnConstraints />
-      <ColumnConstraints maxWidth="85.0" minWidth="85.0" prefWidth="85.0" />
+      <ColumnConstraints maxWidth="176.0" minWidth="97.0" prefWidth="176.0" />
+      <ColumnConstraints maxWidth="85.0" minWidth="0.0" prefWidth="0.0" />
       <ColumnConstraints maxWidth="0.0" minWidth="0.0" prefWidth="0.0" />
       <ColumnConstraints />
       <ColumnConstraints />
       <ColumnConstraints />
    </columnConstraints>
    <rowConstraints>
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
+      <RowConstraints maxHeight="11.0" minHeight="8.0" prefHeight="11.0" />
+      <RowConstraints maxHeight="31.0" minHeight="24.0" prefHeight="28.0" />
+      <RowConstraints maxHeight="36.0" minHeight="14.0" prefHeight="29.0" />
+      <RowConstraints maxHeight="45.0" minHeight="0.0" prefHeight="30.0" />
+      <RowConstraints maxHeight="68.0" minHeight="7.0" prefHeight="23.0" />
+      <RowConstraints maxHeight="68.0" minHeight="0.0" prefHeight="0.0" />
+      <RowConstraints maxHeight="43.0" minHeight="0.0" prefHeight="0.0" />
+      <RowConstraints maxHeight="18.0" minHeight="0.0" prefHeight="0.0" />
+      <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
       <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
       <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
       <RowConstraints />
