@@ -40,7 +40,7 @@ public class Menu extends Application {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+//
 //        primaryStage.setTitle("Setting");
 //        Label lbl1 = new Label("please chose the board size: 3x3-20x20");
 //        Label lbl2 = new Label("hi welcome!!");
