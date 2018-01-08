@@ -11,28 +11,24 @@ import java.io.IOException;
 import static javafx.fxml.FXMLLoader.load;
 
 public class Settings extends Application {
-    private static Stage m_primaryStage;
 //hi this is or
     @Override
 
     public void start(Stage primaryStage) throws Exception{
-    m_primaryStage = primaryStage;
+
         try {
 //            System.out.print("hi");
 
             GridPane root = (GridPane) load(getClass().getResource("SettingsFXML.fxml"));
             Scene scene = new Scene(root,400,350);
             scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-            m_primaryStage.setTitle("Settings");
-            m_primaryStage.setScene(scene);
-            m_primaryStage.show();
+            primaryStage.setTitle("Settings");
+            primaryStage.setScene(scene);
+            primaryStage.show();
         } catch(Exception e) {
             e.printStackTrace();
         }
 
-
-    }
-    public void showSettings() throws IOException {
 
     }
     public static void main(String[] args) {

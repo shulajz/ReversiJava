@@ -8,6 +8,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.awt.*;
 
@@ -22,7 +23,7 @@ public class ControllerSettings {
     @FXML
     private MenuButton open_player;
     @FXML
-    protected void ok() {
+    protected void ok()  {
         String startPlayer = open_player.getText();
         String colorPlayer1 = color_player1.getText();
         String colorPlayer2 = color_player2.getText();
