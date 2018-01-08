@@ -19,13 +19,13 @@ import java.util.Set;
 public class MenuController {
 
     @FXML
-    private Button sittingsButton;
+    private Button settingsButton;
 
     @FXML
     protected void openSettings() {
 
         Settings settings = new Settings();
-        Stage stage = (Stage) sittingsButton.getScene().getWindow();
+        Stage stage = (Stage) settingsButton.getScene().getWindow();
         try {
             settings.start(stage);
         } catch (Exception e) {

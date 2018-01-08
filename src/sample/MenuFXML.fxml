@@ -18,7 +18,7 @@
     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Button fx:id="sittingsButton" mnemonicParsing="false" onAction="#openSettings" text="settings" />
+      <Button fx:id="settingsButton" mnemonicParsing="false" onAction="#openSettings" text="settings" />
       <Button mnemonicParsing="false" onAction="#startGame" text="start" GridPane.rowIndex="1" />
    </children>
 </GridPane>
