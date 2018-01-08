@@ -2,6 +2,7 @@ package sample;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.PasswordField;
@@ -23,14 +24,25 @@ public class ControllerSettings {
     @FXML
     private MenuButton open_player;
     @FXML
+    private Button closeButton;
+
+    @FXML
     protected void ok()  {
         String startPlayer = open_player.getText();
         String colorPlayer1 = color_player1.getText();
         String colorPlayer2 = color_player2.getText();
         String b_size = board_size.getText();
 
-        System.out.print(startPlayer + "  " + colorPlayer1 + "  " + colorPlayer2 + "  " + b_size);
-        //WRITE TO FILE
+        //System.out.print(startPlayer + "  " + colorPlayer1 + "  " + colorPlayer2 + "  " + b_size);
+        //NEED TO WRITE TO FILE
+        //return to the menu
+        Menu menu= new Menu();
+        Stage stage = (Stage) closeButton.getScene().getWindow();
+        try {
+            menu.start(stage);
+        } catch (Exception e) {
+
+        }
 
 
 
