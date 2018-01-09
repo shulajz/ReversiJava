@@ -1,26 +1,35 @@
+//
+// Created by shulamit on 10/31/17.
+//
 package boardgame;
 
 
-import java.awt.*;
-
 public class Cell {
+    private Coordinate coordinate;
+    private TokenValue tv;
 
-    private int m_cellWidth;
-    private int m_cellHeight;
-    private Button m_button;
-    private int m_row;
-    private int m_col;
+    public Cell(Coordinate coordinate, TokenValue tv){
+        this.coordinate = coordinate;
+        this.tv = tv;
+    }
+    public Coordinate getCoordinate() {
+        return coordinate;
+    }
+
+    public TokenValue getTokenValue(){
+        return tv;
+    }
+
+    public void setCoordinate(Coordinate coordinate) {
+        this.coordinate = coordinate;
+    }
+
+    public void setTokenValue(TokenValue tv){
+        this.tv = tv;
+    }
+};
 
 
-public Cell(int cellWidth, int cellHeight, Button button) {
-    m_cellWidth = cellWidth;
-    m_cellHeight = cellHeight;
-    m_button = button;
-//    m_row = row;
-//    m_col = col;
-}
 
 
 
-
-}
