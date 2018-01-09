@@ -47,7 +47,7 @@ public class BoardTemp extends GridPane {
                   this.add(button, j, i);
               }
                 else {
-                  this.add(new Rectangle(cellWidth, cellHeight,Color.WHITE), j, i);
+                  this.add(new Rectangle(cellWidth, cellHeight,Color.YELLOW), j, i);
               }
                 GridPane shula = new GridPane();
                 Button kll = new Button("d");
