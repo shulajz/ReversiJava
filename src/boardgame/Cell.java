@@ -12,12 +12,12 @@ public class Cell {
     private int m_col;
 
 
-public Cell(int cellWidth, int cellHeight, Button button, int row, int col) {
+public Cell(int cellWidth, int cellHeight, Button button) {
     m_cellWidth = cellWidth;
     m_cellHeight = cellHeight;
     m_button = button;
-    m_row = row;
-    m_col = col;
+//    m_row = row;
+//    m_col = col;
 }
 
 

@@ -16,7 +16,7 @@ public class BoardController extends GridPane {
     public BoardController(int[][] board) {
         this.board = board;
         FXMLLoader fxmlLoader = new
-                FXMLLoader(getClass().getResource("MazeBoard.fxml"));
+                FXMLLoader(getClass().getResource("BoardFXML.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
@@ -26,6 +26,8 @@ public class BoardController extends GridPane {
             throw new RuntimeException(exception);
         }
     }
+
+
     public void draw() {
         this.getChildren().clear();
 
@@ -35,21 +37,20 @@ public class BoardController extends GridPane {
         int cellHeight = height / board.length;
         int cellWidth = width / board[0].length;
 
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[i].length; j++) {
-                if (board[i][j] == FREE)
-                    this.add(new Rectangle(cellWidth, cellHeight,
-                            Color.WHITE), j, i);
-                else
-                    this.add(new Rectangle(cellWidth, cellHeight,
-                            Color.BLACK), j, i);
-                GridPane shula = new GridPane();
-                Button kll = new Button("d");
-                Node or = new javafx.scene.control.Button("d");
-                shula.add(or, 9 ,0);
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 6; j++) {
+//                if (board[i][j] == FREE)
+                    this.add(new javafx.scene.control.Button(), j, i);
+//                else
+//                    this.add(new Rectangle(cellWidth, cellHeight,
+//                            Color.BLACK), j, i);
+//                GridPane shula = new GridPane();
+//                Button kll = new Button("d");
+//                Node or = new javafx.scene.control.Button("d");
+//                shula.add(or, 9 ,0);
             }
         }
     }
 }
 
-}
+//}
