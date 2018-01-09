@@ -21,10 +21,10 @@ public class ReversiGameController implements Initializable {
     public void initialize(URL location, ResourceBundle
             resources) {
         BoardTemp boardTemp = new BoardTemp(board);
-//        boardController.setPrefWidth(400);
-//        boardController.setPrefHeight(400);
-//        root.getChildren().add(0, boardController);
-//        boardController.draw();
+        boardTemp.setPrefWidth(400);
+        boardTemp.setPrefHeight(400);
+        root.getChildren().add(0, boardTemp);
+        boardTemp.draw();
 
     }
 
