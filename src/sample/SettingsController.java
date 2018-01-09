@@ -35,13 +35,13 @@ public class SettingsController {
     private Button closeButton;
     @FXML
     private void initialize(){
-        board_size.setValue("8x8");
+        board_size.setValue("");
         board_size.setItems(sizes);
-       color_player1.setValue("black");
+       color_player1.setValue("");
         color_player1.setItems(colors);
-        color_player2.setValue("white");
+        color_player2.setValue("");
         color_player2.setItems(colors);
-        open_player.setValue("player 1");
+        open_player.setValue("");
         open_player.setItems(players);
     }
     @FXML
