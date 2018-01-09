@@ -4,6 +4,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 
 import java.awt.*;
 import java.io.IOException;
@@ -39,15 +41,18 @@ public class BoardTemp extends GridPane {
 
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 6; j++) {
-//                if (board[i][j] == FREE)
-                    this.add(new javafx.scene.control.Button(), j, i);
-//                else
-//                    this.add(new Rectangle(cellWidth, cellHeight,
-//                            Color.BLACK), j, i);
-//                GridPane shula = new GridPane();
-//                Button kll = new Button("d");
-//                Node or = new javafx.scene.control.Button("d");
-//                shula.add(or, 9 ,0);
+              if (board[i][j] == FREE) {
+//                  this.add(new Rectangle(cellWidth, cellHeight,Col), j, i);
+                  Node button = new javafx.scene.control.Button();
+                  this.add(button, j, i);
+              }
+                else {
+                  this.add(new Rectangle(cellWidth, cellHeight,Color.WHITE), j, i);
+              }
+                GridPane shula = new GridPane();
+                Button kll = new Button("d");
+                Node or = new javafx.scene.control.Button("d");
+                shula.add(or, 9 ,0);
             }
         }
     }
