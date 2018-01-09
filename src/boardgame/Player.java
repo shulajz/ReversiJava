@@ -60,4 +60,7 @@ public abstract class Player {
     public void printAfterTheRealPlayerMove(BoardGraphic boardGraphic, boolean need_to_print){
 
     }
+    public void setTokenValue(TokenValue tv1) {
+        tv = tv1;
+    }
 }

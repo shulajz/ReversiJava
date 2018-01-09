@@ -6,6 +6,19 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
 public class GuiToken extends Token{
+    private GridPane grid;
+    private int row;
+    private int col;
+//    private ImageView iv;
+
+    public GuiToken() {
+        this.grid = grid;
+        this.row = row;
+        this.col = col;
+        // Load the player's image
+//        iv = new
+//                ImageView(getClass().getResource("minion.png").toExternalForm());
+    }
     public void draw(int i, int j, GridPane gridPane, int radius) {
         drawTokenValue(tv, i, j, gridPane, radius);
     }
@@ -24,6 +37,26 @@ public class GuiToken extends Token{
 
         }
     }
+//    public void toggle() {
+//        row--; // need to check that player doesn't hit a wall
+//        redraw();
+//    }
+//    public void moveDown() {
+//        row++;
+//        redraw();
+//    }
+//    public void moveLeft() {
+//        col--;
+//        redraw();
+//    }
+//    public void moveRight() {
+//        col++;
+//        redraw();
+//    }
+//    private void redraw() {
+//        grid.getChildren().remove(iv);
+//        grid.add(iv, col, row);
+//    }
 
 }
 
