@@ -23,7 +23,7 @@ public class ReversiGameController implements Initializable {
         boardTemp.setPrefWidth(400);
         boardTemp.setPrefHeight(400);
         root.getChildren().add(0, boardTemp);
-        boardTemp.draw();
+        boardTemp.draw(board.getTokens());
 
     }
 

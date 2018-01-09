@@ -32,7 +32,7 @@ public class GuiBoard extends GridPane {
     }
 
 
-    public void draw() {
+    public void draw(Token[][] tokens) {
         this.getChildren().clear();
 
         int height = (int)this.getPrefHeight();
@@ -44,12 +44,11 @@ public class GuiBoard extends GridPane {
         for (int i = 0; i < board.getDimensions(); i++) {
             for (int j = 0; j < board.getDimensions(); j++) {
 
-///
                 Rectangle rec = new Rectangle(cellWidth, cellHeight,
                         Color.YELLOW);
                 rec.setStroke(Color.BLACK);
                 this.add(rec, j, i);
-
+                tokens[i][j].draw();
             }
         }
     }
