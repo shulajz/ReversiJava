@@ -12,15 +12,14 @@ public class ReversiGameController implements Initializable {
 
     @FXML
     private HBox root;
-    private int[][] board = {
-            {0,1,0,1,0,0,0,1,0,0,0},
-            {0,1,0,1,1,1,0,1,0,1,0},
-};
-
+    private Board board;
     @Override
     public void initialize(URL location, ResourceBundle
             resources) {
-        BoardTemp boardTemp = new BoardTemp(board);
+        ClassicRules classicRules = new ClassicRules();
+        int dim = 8;
+        board = new Board(dim, classicRules.getInitialValues(dim));
+        GuiBoard boardTemp = new GuiBoard(board);
         boardTemp.setPrefWidth(400);
         boardTemp.setPrefHeight(400);
         root.getChildren().add(0, boardTemp);

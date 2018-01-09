@@ -18,15 +18,14 @@ public class Board {
 /**
  *
  * @param dimensions - the dimentions of the board.
- * @param pTokenFactory - the token factory we're using to create tokens.
- * @param boardGraphic - the type of graphic we're using.
  * @param initialCells - the cells we need to init in the beginning.
  */
-    public Board(int dimensions, TokenFactory pTokenFactory,
-          BoardGraphic boardGraphic,List<Cell> initialCells)
+    public Board(int dimensions, List<Cell> initialCells)
     {
+
+        pTokenFactory = new GuiTokenFactory();
         this.dimensions = dimensions;
-        m_boardGraphic = boardGraphic;
+
         pTokenFactory = pTokenFactory;
         boardArr = new Token[dimensions][dimensions];
 

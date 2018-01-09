@@ -11,7 +11,7 @@ public class ReversiGame extends Application {
     public void start(Stage primaryStage) {
         try {
             HBox root = (HBox) FXMLLoader.load(getClass().getResource("ReversiGameFXML.fxml"));
-            Scene scene = new Scene(root,520,400);
+            Scene scene = new Scene(root,800,700);
 //            scene.getStylesheets().add(getClass().getResource("applicationReversiGameController.css").toExternalForm());
             primaryStage.setTitle("Othello game");
             primaryStage.setScene(scene);

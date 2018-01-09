@@ -2,6 +2,9 @@ package boardgame;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.control.ButtonBase;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -11,12 +14,10 @@ import javafx.scene.shape.Rectangle;
 import java.awt.*;
 import java.io.IOException;
 
-public class BoardTemp extends GridPane {
+public class GuiBoard extends GridPane {
     private Board board;
-    private static final int FREE = 0;
-    private static final int WALL = 1;
 
-    public BoardTemp(Board board) {
+    public GuiBoard(Board board) {
         this.board = board;
         FXMLLoader fxmlLoader = new
                 FXMLLoader(getClass().getResource("BoardFXML.fxml"));
@@ -37,21 +38,16 @@ public class BoardTemp extends GridPane {
         int height = (int)this.getPrefHeight();
         int width = (int)this.getPrefWidth();
 
-        int cellHeight = height / board.length;
-        int cellWidth = width / board[0].length;
+        int cellHeight = height / board.getDimensions();
+        int cellWidth = width / board.getDimensions();
 
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 6; j++) {
+        for (int i = 0; i < board.getDimensions(); i++) {
+            for (int j = 0; j < board.getDimensions(); j++) {
 
-//                  this.add(new Rectangle(cellWidth, cellHeight,Col), j, i);
-                  //Node button = new javafx.scene.control.Button();
-                  this.add(new javafx.scene.control.Button(), j, i);
-                  this.add(new Rectangle(cellWidth, cellHeight,Color.YELLOW), j, i);
 
-                GridPane shula = new GridPane();
-                Button kll = new Button("d");
-                Node or = new javafx.scene.control.Button("d");
-                shula.add(or, 9 ,0);
+                Image image = new Image(getClass().getResourceAsStream("brown.jpg"));
+                  this.add(new Rectangle(cellWidth, cellHeight, Color.YELLOW));
+
             }
         }
     }
