@@ -12,9 +12,11 @@ public class GuiToken extends Token{
 //    private ImageView iv;
 
     public GuiToken() {
-        this.grid = grid;
-        this.row = row;
-        this.col = col;
+        tv = TokenValue.Empty;
+
+//        this.grid = grid;
+//        this.row = row;
+//        this.col = col;
         // Load the player's image
 //        iv = new
 //                ImageView(getClass().getResource("minion.png").toExternalForm());
