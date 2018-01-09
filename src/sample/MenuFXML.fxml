@@ -29,7 +29,7 @@
       <HBox prefHeight="100.0" prefWidth="200.0" />
       <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <children>
-            <Button fx:id="sittingsButton" alignment="center" mnemonicParsing="false" onAction="#openSettings" prefHeight="50.0" prefWidth="119.0" text="settings" />
+            <Button fx:id="settingsButton" alignment="center" mnemonicParsing="false" onAction="#openSettings" prefHeight="50.0" prefWidth="119.0" text="settings" />
          </children>
       </HBox>
    </children>

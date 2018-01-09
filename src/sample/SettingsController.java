@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 import java.awt.*;
 
 public class SettingsController {
+
     ObservableList<String> colors = FXCollections.
             observableArrayList("black", "white", "blue", "yellow", "red");
     ObservableList<String> sizes = FXCollections.
@@ -38,7 +39,7 @@ public class SettingsController {
         board_size.setItems(sizes);
        color_player1.setValue("black");
         color_player1.setItems(colors);
-        color_player2.setValue("black");
+        color_player2.setValue("white");
         color_player2.setItems(colors);
         open_player.setValue("player 1");
         open_player.setItems(players);
