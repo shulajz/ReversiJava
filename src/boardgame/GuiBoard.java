@@ -45,8 +45,10 @@ public class GuiBoard extends GridPane {
             for (int j = 0; j < board.getDimensions(); j++) {
 
 //
-                Image image = new Image(getClass().getResourceAsStream("brown.jpg"));
-                  this.add(new Rectangle(cellWidth, cellHeight, Color.YELLOW));
+                Rectangle rec = new Rectangle(cellWidth, cellHeight,
+                        Color.YELLOW);
+                rec.setStroke(Color.BLACK);
+                this.add(rec, j, i);
 
             }
         }
