@@ -7,14 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-
-<GridPane alignment="center" hgap="10" maxHeight="-Infinity" maxWidth="-Infinity"
-          minHeight="-Infinity" minWidth="-Infinity" prefHeight="248.0" prefWidth="398.0"
-          vgap="10"
-          xmlns="http://javafx.com/javafx/8"
-          xmlns:fx="http://javafx.com/fxml/1"
-          fx:controller="sample.MenuController">
+<GridPane alignment="center" hgap="10" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="248.0" prefWidth="398.0" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenuController">
     <padding><Insets bottom="10" left="25" right="25" top="25" /></padding>
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -27,22 +20,16 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Label alignment="CENTER_RIGHT" id="WelcomeToReversiGameText"
-             text="Welcome to Reversi Game" GridPane.columnSpan="2" />
+      <Label id="WelcomeToReversiGameText" alignment="CENTER_RIGHT" text="Welcome to Reversi Game" GridPane.columnSpan="2" />
       <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
          <children>
-             <Button alignment="CENTER" mnemonicParsing="false"
-                     onAction="#startGame" prefHeight="50.0"
-                     prefWidth="129.0" text="start" />
+             <Button fx:id="startGame" alignment="CENTER" mnemonicParsing="false" onAction="#startGame" prefHeight="50.0" prefWidth="129.0" text="start" />
          </children>
       </HBox>
       <HBox prefHeight="100.0" prefWidth="200.0" />
-      <HBox prefHeight="100.0" prefWidth="200.0"
-            GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <children>
-            <Button fx:id="settingsButton" alignment="center"
-                    mnemonicParsing="false" onAction="#openSettings"
-                    prefHeight="50.0" prefWidth="119.0" text="settings" />
+            <Button fx:id="settingsButton" alignment="center" mnemonicParsing="false" onAction="#openSettings" prefHeight="50.0" prefWidth="119.0" text="settings" />
          </children>
       </HBox>
    </children>

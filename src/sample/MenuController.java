@@ -1,5 +1,6 @@
 package sample;
 
+import boardgame.ReversiGame;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +21,8 @@ public class MenuController {
 
     @FXML
     private Button settingsButton;
+    @FXML
+    private Button startGame;
 
     @FXML
     protected void openSettings() {
@@ -34,7 +37,12 @@ public class MenuController {
     }
     @FXML
     protected void startGame() {
-
+        ReversiGame settings = new ReversiGame();
+        Stage stage = (Stage) startGame.getScene().getWindow();
+        try {
+            settings.start(stage);
+        } catch (Exception e) {
+        }
 
     }
 
