@@ -44,7 +44,7 @@ public class GuiBoard extends GridPane {
         for (int i = 0; i < board.getDimensions(); i++) {
             for (int j = 0; j < board.getDimensions(); j++) {
 
-//
+///
                 Rectangle rec = new Rectangle(cellWidth, cellHeight,
                         Color.YELLOW);
                 rec.setStroke(Color.BLACK);
