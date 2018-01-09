@@ -155,7 +155,7 @@ public class ClassicRules implements GameRules {
         int i = 0;
         while (i != coordinatesToFlip.size()) {
             board.getTokens()[coordinatesToFlip.get(i).getRow()]
-                    [coordinatesToFlip.get(i).getRow()].toggle();
+                    [coordinatesToFlip.get(i).getCol()].toggle();
             i++;
         }
     }

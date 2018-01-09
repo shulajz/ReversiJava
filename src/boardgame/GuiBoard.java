@@ -70,9 +70,9 @@ public class GuiBoard extends GridPane {
 //        }
     public void switchPlayer() {
         if (playerCurrentTurn.getValue() == TokenValue.White) {
-            playerCurrentTurn.setTokenValue(TokenValue.Black);
+            playerCurrentTurn =players[0];
         } else if (playerCurrentTurn.getValue() == TokenValue.Black) {
-            playerCurrentTurn.setTokenValue(TokenValue.White);
+            playerCurrentTurn = players[1];
 
         }
     }
