@@ -2,7 +2,10 @@
 // Created by shulamit on 10/30/17.
 //
 package boardgame;
-public abstract class Token {
+
+import javafx.scene.layout.GridPane;
+
+public abstract class Token  {
     protected TokenValue tv;
 
     public void toggle() {
@@ -13,7 +16,7 @@ public abstract class Token {
         }
     }
 
-    abstract public void draw();
+    abstract public void draw(int i, int j, GridPane gridPane, int radius);
 //    {
 
 //    }

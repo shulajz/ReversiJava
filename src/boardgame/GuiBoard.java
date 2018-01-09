@@ -8,10 +8,13 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 
 public class GuiBoard extends GridPane {
@@ -41,17 +44,16 @@ public class GuiBoard extends GridPane {
         int cellHeight = height / board.getDimensions();
         int cellWidth = width / board.getDimensions();
 
-        for (int i = 0; i < board.getDimensions(); i++) {
-            for (int j = 0; j < board.getDimensions(); j++) {
+        for (int i = 1; i < board.getDimensions(); i++) {
+            for (int j = 1; j < board.getDimensions(); j++) {
 
                 Rectangle rec = new Rectangle(cellWidth, cellHeight,
                         Color.YELLOW);
                 rec.setStroke(Color.BLACK);
                 this.add(rec, j, i);
-                tokens[i][j].draw();
+                tokens[i][j].draw(i, j, this, cellWidth/2);
             }
         }
+
     }
 }
-
-//}

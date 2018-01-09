@@ -5,8 +5,8 @@ public class Coordinate {
     public int col;
 
     public Coordinate(int row, int col) {
-        row = row;
-        col = col;
+        this.row = row;
+        this.col = col;
     }
 
     public int getRow(){

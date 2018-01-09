@@ -17,7 +17,7 @@ public class ReversiGameController implements Initializable {
     public void initialize(URL location, ResourceBundle
             resources) {
         ClassicRules classicRules = new ClassicRules();
-        int dim = 8;
+        int dim = 9;
         board = new Board(dim, classicRules.getInitialValues(dim));
         GuiBoard boardTemp = new GuiBoard(board);
         boardTemp.setPrefWidth(400);

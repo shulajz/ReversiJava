@@ -7,11 +7,11 @@ import java.util.List;
 //
 public class ClassicRules implements GameRules {
 
-/**
- *
- * @param dim the dim of the board.
- * @return the initial values for the start of the game
- */
+    /**
+     *
+     * @param dim the dim of the board.
+     * @return the initial values for the start of the game
+     */
     public List<Cell> getInitialValues(int dim)
     {
         List<Cell> cells = new ArrayList<Cell>();
@@ -35,7 +35,7 @@ public class ClassicRules implements GameRules {
      * @param player the player which is playing
      * @return a token value
      */
-   public TokenValue getOppositeValue(Player player)
+    public TokenValue getOppositeValue(Player player)
 
     {
         if (player.getValue() == TokenValue.Black) {
@@ -53,8 +53,8 @@ public class ClassicRules implements GameRules {
      * @param player the player playing
      */
     public void getLegalCoordinates
-            (Board b, Player player,
-             List<Coordinate> validCoordinates) {
+    (Board b, Player player,
+     List<Coordinate> validCoordinates) {
 
         TokenValue oppositeValue;
         oppositeValue = getOppositeValue(player);
@@ -110,8 +110,8 @@ public class ClassicRules implements GameRules {
     }
 
     public void checkEightOptions(Coordinate inputCoordinate,
-                      Board board, Player player,
-                      List<Coordinate> coordinatesToFlip) {
+                                  Board board, Player player,
+                                  List<Coordinate> coordinatesToFlip) {
         checkIfToFlipCell(
                 inputCoordinate, -1, -1, coordinatesToFlip,
                 board.getDimensions(), board.getTokens(), player);
@@ -222,8 +222,8 @@ public class ClassicRules implements GameRules {
      * @param colDir - the direction the col is going
      */
     public void checkIfCellValid(Token token[][], int row, int col,
-                                          int rowDir, int colDir, List<Coordinate> pValidCoordinates,
-                                          int dim, TokenValue oppositeValue){
+                                 int rowDir, int colDir, List<Coordinate> pValidCoordinates,
+                                 int dim, TokenValue oppositeValue){
         boolean alreadyExist = false;
         boolean isValid = false;
         int paramRow = row + rowDir;
