@@ -8,6 +8,7 @@ import boardgame.Coordinate;
 import boardgame.GameRules;
 
 import boardgame.TokenValue;
+import javafx.scene.paint.Color;
 
 import java.util.List;
 
@@ -15,6 +16,7 @@ import java.util.List;
 public abstract class Player {
 
     protected TokenValue tv;
+    protected Color color;
     public TokenValue getValue() {
         return tv;
     }
@@ -62,5 +64,9 @@ public abstract class Player {
     }
     public void setTokenValue(TokenValue tv1) {
         tv = tv1;
+    }
+
+    public Color getColor() {
+        return color;
     }
 }

@@ -21,20 +21,19 @@ public class GuiToken extends Token{
 //        iv = new
 //                ImageView(getClass().getResource("minion.png").toExternalForm());
     }
-    public void draw(int i, int j, GridPane gridPane, int radius) {
-        drawTokenValue(tv, i, j, gridPane, radius);
+    public void draw(int i, int j, GridPane gridPane, int radius, Player[] players) {
+        drawTokenValue(tv, i, j, gridPane, radius, players);
     }
-    public void drawTokenValue(TokenValue tv, int i, int j, GridPane gridPane, int radius){
+    public void drawTokenValue(TokenValue tv, int i, int j, GridPane gridPane, int radius, Player[] players){
         if (tv == TokenValue.Black){
-            Circle circle = new Circle(i, j, radius, Color.BLACK);
+            Circle circle = new Circle(i, j, radius, players[0].getColor());
             circle.setStroke(Color.BLACK);
-//            circle.setFill(Color.BLACK);
+
             gridPane.add(circle, j, i);
 
         }else if(tv == TokenValue.White){
-            Circle circle = new Circle(i, j, radius, Color.WHITE);
+            Circle circle = new Circle(i, j, radius, players[1].getColor());
             circle.setStroke(Color.BLACK);
-//            circle.setFill(Color.WHITE);
             gridPane.add(circle, j, i);
 
         }

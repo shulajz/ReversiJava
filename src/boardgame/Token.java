@@ -4,6 +4,7 @@
 package boardgame;
 
 import javafx.scene.layout.GridPane;
+import javafx.scene.paint.Color;
 
 public abstract class Token  {
     protected TokenValue tv;
@@ -16,7 +17,7 @@ public abstract class Token  {
         }
     }
 
-    abstract public void draw(int i, int j, GridPane gridPane, int radius);
+    abstract public void draw(int i, int j, GridPane gridPane, int radius,Player[] players);
 //    {
 
 //    }

@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GuiBoard extends GridPane {
+    private int cellSize;
     private Board board;
     private Player[] players;
     private GameRules gameRules;
@@ -40,63 +41,22 @@ public class GuiBoard extends GridPane {
         }
         TokenValue blackTv = TokenValue.Black;
         this.playerCurrentTurn = players[blackTv.getValue()];
-    }
-    public void eventHandler(){
-//        System.out.println(rec.getX());
-//        System.out.println(rec.getY());
+        initializeBoard();
     }
 
-//        try {
-//            fxmlLoader.load();
-//            this.setOnKeyPressed(event -> {
-//                switch (event.getCode()) {
-//                    case DOWN:
-//                        player.moveDown();
-//                        break;
-//                    case UP:
-//                        player.moveUp();
-//                        break;
-//                    case LEFT:
-//                        player.moveLeft();
-//                        break;
-//                    case RIGHT:
-//                        player.moveRight();
-//                        break;
-//                } catch (Exception e) {
-//
-//                }
-//                event.consume();
-//            });
-//        }
-    public void switchPlayer() {
-        if (playerCurrentTurn.getValue() == TokenValue.White) {
-            playerCurrentTurn =players[0];
-        } else if (playerCurrentTurn.getValue() == TokenValue.Black) {
-            playerCurrentTurn = players[1];
-
-        }
-    }
-
-    public void draw(Token[][] tokens) {
+    public void initializeBoard(){
         this.getChildren().clear();
-
-        int height = (int)this.getPrefHeight();
         int width = (int)this.getPrefWidth();
-
-        int cellHeight = height / board.getDimensions();
-        int cellWidth = width / board.getDimensions();
-
+        cellSize = width / board.getDimensions();
         for (int i = 1; i < board.getDimensions(); i++) {
             for (int j = 1; j < board.getDimensions(); j++) {
-                Rectangle rec = new Rectangle(cellWidth, cellHeight,
+                Rectangle rec = new Rectangle(cellSize, cellSize,
                         Color.YELLOW);
                 rec.setStroke(Color.BLACK);
-
-
                 rec.setOnMouseClicked(event -> {
                     List<Coordinate> validCoordinates = new ArrayList<Coordinate>();
-                    double row = Math.ceil(event.getSceneY()/cellHeight);
-                    double col = Math.ceil(event.getSceneX()/cellWidth);
+                    double row = Math.ceil(event.getSceneY()/cellSize);
+                    double col = Math.ceil(event.getSceneX()/cellSize);
                     Coordinate coordinate = new Coordinate((int)row, (int)col);
                     gameRules.getLegalCoordinates(
                             board, playerCurrentTurn, validCoordinates);
@@ -109,18 +69,31 @@ public class GuiBoard extends GridPane {
                                     playerCurrentTurn);
                             switchPlayer();
                             draw(board.getTokens());
-//                            inputValid = true;
-//                            break;
                         } else {
 
                         }
                     }
-                    System.out.println(Math.ceil(event.getSceneX()/cellWidth));
-                    System.out.println(Math.ceil(event.getSceneY()/cellHeight));
+                    System.out.println(Math.ceil(event.getSceneX()/cellSize));
+                    System.out.println(Math.ceil(event.getSceneY()/cellSize));
                     System.out.println();
                 });
                 this.add(rec, j, i);
-                tokens[i][j].draw(i, j, this, cellWidth/2);
+            }
+        }
+    }
+    public void switchPlayer() {
+        if (playerCurrentTurn.getValue() == TokenValue.White) {
+            playerCurrentTurn =players[0];
+        } else if (playerCurrentTurn.getValue() == TokenValue.Black) {
+            playerCurrentTurn = players[1];
+
+        }
+    }
+
+    public void draw(Token[][] tokens) {
+        for (int i = 1; i < board.getDimensions(); i++) {
+            for (int j = 1; j < board.getDimensions(); j++) {
+                tokens[i][j].draw(i, j, this, cellSize/2, players);
             }
         }
 

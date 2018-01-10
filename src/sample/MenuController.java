@@ -23,6 +23,7 @@ public class MenuController {
     private Button settingsButton;
     @FXML
     private Button startGame;
+    private boolean userDoSettings = false;
 
     @FXML
     protected void openSettings() {
@@ -37,10 +38,11 @@ public class MenuController {
     }
     @FXML
     protected void startGame() {
-        ReversiGame settings = new ReversiGame();
+        userDoSettings =  true;
+        ReversiGame reversi = new ReversiGame();
         Stage stage = (Stage) startGame.getScene().getWindow();
         try {
-            settings.start(stage);
+            reversi.start(stage);
         } catch (Exception e) {
         }
 

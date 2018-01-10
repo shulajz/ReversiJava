@@ -24,7 +24,7 @@ public class SettingsController {
     ObservableList<String> sizes = FXCollections.
             observableArrayList("4x4", "5x5", "6x6", "7x7", "8x8");
     ObservableList<String> players = FXCollections.
-            observableArrayList("player 1", "player 2");
+            observableArrayList("player1", "player2");
 
     @FXML
     private ComboBox board_size;
@@ -44,7 +44,7 @@ public class SettingsController {
         color_player1.setItems(colors);
         color_player2.setValue("white");
         color_player2.setItems(colors);
-        open_player.setValue("player 1");
+        open_player.setValue("player1");
         open_player.setItems(players);
     }
     @FXML
@@ -54,10 +54,6 @@ public class SettingsController {
         String colorPlayer2 = color_player2.getValue().toString();
         String b_size = board_size.getValue().toString();
 
-        System.out.println("start player: " + startPlayer +
-                "  color Player 1: " + colorPlayer1 +
-                "  color Player 2: " + colorPlayer2 +
-                "  size board: " + b_size);
         writeToSettingFile(startPlayer,
                 colorPlayer1, colorPlayer2, b_size);
 
@@ -73,7 +69,7 @@ public class SettingsController {
     private void writeToSettingFile(String startPlayer,
                                     String colorPlayer1, String colorPlayer2, String b_size){
         Writer writer = createNewFile();
-        String settings = "start player: " + startPlayer +
+        String settings = "startPlayer: " + startPlayer +
                 "\ncolorPlayer1: " + colorPlayer1 +
                 "\ncolorPlayer2: " + colorPlayer2 +
                 "\nsizeBoard: " + b_size;
@@ -87,18 +83,16 @@ public class SettingsController {
 
 
     }
-    private Writer createNewFile(){
-        Writer writer = null;
+    public Writer createNewFile() {
 
+        BufferedWriter output = null;
         try {
-            writer = new BufferedWriter(new OutputStreamWriter(
-                    new FileOutputStream("settingsFile.txt"), "utf-8"));
-
-        } catch (IOException ex) {
-            System.out.println("create file failed");
-            exit(1);
+            File file = new File("settingsFile.txt");
+            output = new BufferedWriter(new FileWriter(file));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        return writer;
+        return output;
     }
 }
 

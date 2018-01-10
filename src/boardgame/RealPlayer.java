@@ -3,13 +3,15 @@
 //
 
 package boardgame;
+import javafx.scene.paint.Color;
+
 import java.util.List;
 
 public class RealPlayer extends Player{
-    private TokenValue tv;
 
-    public RealPlayer(TokenValue tv) {
+    public RealPlayer(TokenValue tv, Color color) {
         this.tv = tv;
+        this.color = color;
     }
 
 

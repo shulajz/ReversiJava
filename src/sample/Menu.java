@@ -8,7 +8,9 @@ import javafx.scene.control.MenuButton;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
 
 import static javafx.fxml.FXMLLoader.load;
 
@@ -24,13 +26,11 @@ public class Menu extends Application {
     @FXML
     private MenuButton open_player;
 
-    @FXML
     @Override
     public void start(Stage primaryStage) throws Exception {
         try {
-
             GridPane root = (GridPane) FXMLLoader.load(getClass().getResource("MenuFXML.fxml"));
-            Scene scene = new Scene(root, 500, 500);
+            Scene scene = new Scene(root, 500, 250);
             scene.getStylesheets().add(getClass().getResource("menuApplication.css").toExternalForm());
             primaryStage.setTitle("Menu");
             primaryStage.setScene(scene);
@@ -38,9 +38,14 @@ public class Menu extends Application {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
     public static void main(String[] args) {
+        try {
+            File file = new File("settingsFile.txt");
+            Files.deleteIfExists(file.toPath());
+        }catch(IOException e){
+
+        }
         launch(args);
     }
 }
