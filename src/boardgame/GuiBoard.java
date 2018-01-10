@@ -72,7 +72,18 @@ public class GuiBoard extends GridPane {
                                 gameRules.flipTokens(coordinate, board,
                                         playerCurrentTurn);
                                 switchPlayer();
+                                int white = 0;
+                                int black = 0;
+                                board.calcResults(black, white);
+                                System.out.println(black);
+                                System.out.println(white);
+                                gameController.setBlackScore(Integer.toString(black));
+                                gameController.setWhiteScore(Integer.toString(white));
+                                gameController.setCurrentPlayer(
+                                        playerCurrentTurn.getColor().toString());
                                 draw(board.getTokens());
+
+
                             } else {//invalid cell do nothing
 
                             }

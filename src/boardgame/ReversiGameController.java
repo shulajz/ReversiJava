@@ -17,6 +17,7 @@ import java.util.ResourceBundle;
 public class ReversiGameController implements Initializable {
 
 
+
     @FXML
     private HBox root;
     @FXML
@@ -100,6 +101,16 @@ public class ReversiGameController implements Initializable {
             players[1] = new RealPlayer(TokenValue.White, color_player1);
 
         }
+    }
+
+    public void setCurrentPlayer(String tv) {
+        currPlayer.setText(tv);
+    }
+    public void setWhiteScore(String whiteScore1) {
+        whiteScore.setText(whiteScore1);
+    }
+    public void setBlackScore(String blackScore1) {
+        blackScore.setText(blackScore1);
     }
 
 }
