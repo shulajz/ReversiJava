@@ -8,12 +8,12 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<HBox fx:id="root" prefHeight="133.0" prefWidth="274.0" spacing="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boardgame.ReversiGameController">
+<HBox fx:id="root" prefHeight="222.0" prefWidth="240.0" spacing="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boardgame.ReversiGameController">
    <children>
       <GridPane>
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="50.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="129.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="19.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="69.0" vgrow="SOMETIMES" />
@@ -21,12 +21,21 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <HBox prefHeight="78.0" prefWidth="100.0">
+            <VBox prefHeight="222.0" prefWidth="132.0" GridPane.rowSpan="3">
                <children>
-                  <TextField text="Current Player" />
+                  <Label text="Current player is:" />
+                  <Label text="Black scores:" />
+                  <Label text="White scores:" />
                </children>
-            </HBox>
+            </VBox>
          </children>
       </GridPane>
+      <VBox prefHeight="222.0" prefWidth="128.0">
+         <children>
+            <Label text="Black" />
+            <Label text="2" />
+            <Label text="2" />
+         </children>
+      </VBox>
    </children>
 </HBox>
