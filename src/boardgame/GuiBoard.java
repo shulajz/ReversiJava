@@ -87,7 +87,7 @@ public class GuiBoard extends GridPane {
         } else if (playerCurrentTurn.getValue() == TokenValue.Black) {
             playerCurrentTurn = players[1];
 
-        }//
+        }
     }
 
     public void draw(Token[][] tokens) {
