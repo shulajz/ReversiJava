@@ -26,6 +26,8 @@ public class ReversiGameController implements Initializable {
     @FXML
     private Button returnToMenuButton;
 
+
+
     @Override
     public void initialize(URL location, ResourceBundle
             resources) {
@@ -33,7 +35,7 @@ public class ReversiGameController implements Initializable {
         readFromSettingsFile();
         initializePlayers();
         Board board = new Board(dim, classicRules.getInitialValues(dim));
-        GuiBoard boardTemp = new GuiBoard(board, players, classicRules);
+        GuiBoard boardTemp = new GuiBoard(board, players, classicRules, this);
         boardTemp.setPrefWidth(400);
         boardTemp.setPrefHeight(400);
         root.getChildren().add(0, boardTemp);

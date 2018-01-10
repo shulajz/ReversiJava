@@ -9,6 +9,10 @@ package boardgame;
 import java.util.ArrayList;
 import java.util.List;
 
+import static boardgame.TokenValue.Black;
+import static boardgame.TokenValue.Empty;
+import static boardgame.TokenValue.White;
+
 public class Board {
 //    private ArrayList<Token>[][] boardArr;
     private Token[][] boardArr;
@@ -40,6 +44,21 @@ public class Board {
                     [initialCells.get(i).getCoordinate().getCol()].
                     setValue(initialCells.get(i).getTokenValue());
         }
+//
+        for(int i = 1; i < 5; i++) {
+            for (int j = 1; j < 5; j++) {
+                boardArr[i][j].setValue(Empty);
+            }
+        }
+        boardArr[1][3].setValue(Black);
+        boardArr[2][3].setValue(Black);
+        boardArr[3][3].setValue(Black);
+        boardArr[4][3].setValue(Black);
+
+        boardArr[1][4].setValue(White);
+        boardArr[2][4].setValue(White);
+        boardArr[3][4].setValue(White);
+        boardArr[4][4].setValue(White);
     }
 
     public Board(Board oldBoard) {
@@ -116,11 +135,11 @@ public class Board {
     public void calcResults(int black, int white) {
         for (int i = 1; i < dimensions; i++) {
             for (int j = 1; j < dimensions; j++) {
-                if (boardArr[i][j].getValue() == TokenValue.Black) {
+                if (boardArr[i][j].getValue() == Black) {
                     black++;
-                } else if (boardArr[i][j].getValue() == TokenValue.White) {
+                } else if (boardArr[i][j].getValue() == White) {
                     white++;
-                } else if ((boardArr[i][j].getValue() == TokenValue.Empty)) {
+                } else if ((boardArr[i][j].getValue() == Empty)) {
                     continue;
                 }
             }

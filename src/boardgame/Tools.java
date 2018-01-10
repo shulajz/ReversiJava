@@ -3,7 +3,7 @@
 //
 package boardgame;
 class Tools {
-    static final int DIM = 9;
+//    static final int DIM = ;
 
 
 }

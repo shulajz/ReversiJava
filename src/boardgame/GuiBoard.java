@@ -25,7 +25,10 @@ public class GuiBoard extends GridPane {
     private Player[] players;
     private GameRules gameRules;
     private Player playerCurrentTurn;
-    public GuiBoard(Board board, Player players[], GameRules gameRules) {
+    private ReversiGameController gameController;
+    public GuiBoard(Board board, Player players[],
+                    GameRules gameRules, ReversiGameController controller) {
+        this.gameController = controller;
         this.gameRules = gameRules;
         this.players = players;
         this.board = board;
@@ -60,23 +63,45 @@ public class GuiBoard extends GridPane {
                     Coordinate coordinate = new Coordinate((int)row, (int)col);
                     gameRules.getLegalCoordinates(
                             board, playerCurrentTurn, validCoordinates);
-                    for (int k = 0; k < validCoordinates.size(); k++) {
-                        //checks if the input is one of the legal coordinates
-                        if(row == validCoordinates.get(k).getRow()
-                                && col == validCoordinates.get(k).getCol()){
-                            board.updateValue(coordinate, playerCurrentTurn.getValue());
-                            gameRules.flipTokens(coordinate, board,
-                                    playerCurrentTurn);
-                            switchPlayer();
-                            draw(board.getTokens());
-                        } else {
+                    if (!validCoordinates.isEmpty()) {//the player has a turn
+                        for (int k = 0; k < validCoordinates.size(); k++) {
+                            //checks if the input is one of the legal coordinates
+                            if (row == validCoordinates.get(k).getRow()
+                                    && col == validCoordinates.get(k).getCol()) {
+                                board.updateValue(coordinate, playerCurrentTurn.getValue());
+                                gameRules.flipTokens(coordinate, board,
+                                        playerCurrentTurn);
+                                switchPlayer();
+                                draw(board.getTokens());
+                            } else {//invalid cell do nothing
 
+                            }
+                        }
+                    }else {//the player doesn't have any moves
+                        switchPlayer();
+                        //checking if other player has a move
+                        List<Coordinate> validCoordinates1 = new ArrayList<Coordinate>();
+
+                        gameRules.getLegalCoordinates(
+                                board, playerCurrentTurn, validCoordinates1);
+                        switchPlayer();
+                        if (validCoordinates1.isEmpty()) {//no moves for all
+//                            noMoves.setVisible(true);
+                                System.out.println("no move for all");
+//                            noMoves.setText("sorry no moves");
+//                            noMoves.setVisible(true);
+//                            );
+                        } else { //no moves only for current player
+                            System.out.println("no move for one player");
+
+                            switchPlayer();
                         }
                     }
                     System.out.println(Math.ceil(event.getSceneX()/cellSize));
                     System.out.println(Math.ceil(event.getSceneY()/cellSize));
                     System.out.println();
                 });
+
                 this.add(rec, j, i);
             }
         }
