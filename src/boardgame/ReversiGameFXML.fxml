@@ -38,6 +38,6 @@
             <Label fx:id="blackScore" text="2" />
             <Label fx:id="whiteScore" text="2" />
          </children>
-      </VBox>
+      </VBox>//
    </children>
 </HBox>
