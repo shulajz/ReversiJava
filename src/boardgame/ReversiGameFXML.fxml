@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
@@ -7,25 +8,24 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<HBox fx:id="root" prefHeight="27.0" prefWidth="274.0" spacing="10" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="boardgame.ReversiGameController">
+<HBox fx:id="root" prefHeight="133.0" prefWidth="274.0" spacing="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boardgame.ReversiGameController">
    <children>
-      <GridPane prefHeight="55.0" prefWidth="200.0">
+      <GridPane>
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="150.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="50.0" />
         </columnConstraints>
         <rowConstraints>
-          <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="92.0" minHeight="5.0" prefHeight="10.0" vgrow="SOMETIMES" />
-          <RowConstraints maxHeight="125.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="69.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="54.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Current player:" />
-            <Label text="White score is:" GridPane.rowIndex="1" />
-            <Label alignment="TOP_LEFT" text="Black score is:" GridPane.rowIndex="2" />
-            <Label text="Black" GridPane.columnIndex="1" />
-            <Label text="2" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label text="2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <HBox prefHeight="78.0" prefWidth="100.0">
+               <children>
+                  <TextField text="Current Player" />
+               </children>
+            </HBox>
          </children>
       </GridPane>
    </children>
