@@ -7,8 +7,10 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-//
-<HBox fx:id="root" prefHeight="222.0" prefWidth="240.0" spacing="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boardgame.ReversiGameController">
+
+<HBox fx:id="root" prefHeight="222.0" prefWidth="240.0" spacing="10"
+      xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="boardgame.ReversiGameController">
    <children>
       <GridPane>
         <columnConstraints>
@@ -32,9 +34,9 @@
       </GridPane>
       <VBox prefHeight="222.0" prefWidth="128.0">
          <children>
-            <Label text="Black" />
-            <Label text="2" />
-            <Label text="2" />
+            <Label fx:id="currPlayer" text="Black" />
+            <Label fx:id="blackScore" text="2" />
+            <Label fx:id="whiteScore" text="2" />
          </children>
       </VBox>
    </children>

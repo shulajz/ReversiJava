@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 
@@ -18,6 +19,12 @@ public class ReversiGameController implements Initializable {
 
     @FXML
     private HBox root;
+    @FXML
+    private Label currPlayer;
+    @FXML
+    private Label blackScore;
+    @FXML
+    private Label whiteScore;
     private int dim = 9;//default
     private Color color_player1 = Color.BLACK;//default
     private Color color_player2 = Color.WHITE;//default
