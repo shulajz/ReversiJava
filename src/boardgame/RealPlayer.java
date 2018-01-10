@@ -9,9 +9,11 @@ import java.util.List;
 
 public class RealPlayer extends Player{
 
-    public RealPlayer(TokenValue tv, Color color) {
+    public RealPlayer(TokenValue tv, Color color, String colorName) {
         this.tv = tv;
         this.color = color;
+        this.colorName = colorName;
+
     }
 
 

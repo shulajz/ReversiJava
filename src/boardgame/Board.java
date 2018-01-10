@@ -44,21 +44,6 @@ public class Board {
                     [initialCells.get(i).getCoordinate().getCol()].
                     setValue(initialCells.get(i).getTokenValue());
         }
-//
-        for(int i = 1; i < 5; i++) {
-            for (int j = 1; j < 5; j++) {
-                boardArr[i][j].setValue(Empty);
-            }
-        }
-        boardArr[1][3].setValue(Black);
-        boardArr[2][3].setValue(Black);
-        boardArr[3][3].setValue(Black);
-        boardArr[4][3].setValue(Black);
-
-        boardArr[1][4].setValue(White);
-        boardArr[2][4].setValue(White);
-        boardArr[3][4].setValue(White);
-        boardArr[4][4].setValue(White);
     }
 
     public Board(Board oldBoard) {
@@ -132,7 +117,9 @@ public class Board {
     /**
      * calculates who wins the game.
      */
-    public void calcResults(int black, int white) {
+    public int[] calcResults() {
+        int sum[] ={2,2};
+        int black = 0, white = 0;
         for (int i = 1; i < dimensions; i++) {
             for (int j = 1; j < dimensions; j++) {
                 if (boardArr[i][j].getValue() == Black) {
@@ -144,6 +131,9 @@ public class Board {
                 }
             }
         }
+        sum[0] = black;
+        sum[1] = white;
+        return sum;
     }
 
     public BoardGraphic getBoardGraphic()

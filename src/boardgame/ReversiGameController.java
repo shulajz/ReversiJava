@@ -7,6 +7,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+import sample.Menu;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -21,21 +23,25 @@ public class ReversiGameController implements Initializable {
     @FXML
     private HBox root;
     @FXML
+    private Button returnToMenuButton;
+    @FXML
     private Label currPlayer;
     @FXML
     private Label blackScore;
     @FXML
     private Label whiteScore;
+    @FXML
+    private Label  player1Score;
+    @FXML
+    private Label  player2Score;
+
+    private String color_player1_name = "black";//default
+    private String color_player2_name = "white";//default
     private int dim = 9;//default
     private Color color_player1 = Color.BLACK;//default
     private Color color_player2 = Color.WHITE;//default
     private int open_player = 0;//default
     private Player[] players;
-    @FXML
-    private Button returnToMenuButton;
-
-
-
     @Override
     public void initialize(URL location, ResourceBundle
             resources) {
@@ -48,6 +54,8 @@ public class ReversiGameController implements Initializable {
         boardTemp.setPrefHeight(400);
         root.getChildren().add(0, boardTemp);
         boardTemp.draw(board.getTokens());
+        player1Score.setText(color_player1_name + " score");
+        player2Score.setText(color_player2_name + " score");
     }
 
     public void readFromSettingsFile() {
@@ -79,10 +87,12 @@ public class ReversiGameController implements Initializable {
                     }
                     break;
                 case "colorPlayer1:":
+                    color_player1_name = parts[1];
                     color_player1 = Color.valueOf(parts[1]);
                     break;
                 case "colorPlayer2:":
                     color_player2 = Color.valueOf(parts[1]);
+                    color_player2_name = parts[1];
                     break;
                 case "sizeBoard:":
                     dim = Integer.parseInt(parts[1].split("x")[0]) + 1;
@@ -94,11 +104,13 @@ public class ReversiGameController implements Initializable {
     public void initializePlayers() {
         players = new Player[2];
         if (open_player == 0) {
-            players[0] = new RealPlayer(TokenValue.Black, color_player1);
-            players[1] = new RealPlayer(TokenValue.White, color_player2);
+            currPlayer.setText(color_player1_name);
+            players[0] = new RealPlayer(TokenValue.Black, color_player1,color_player1_name);
+            players[1] = new RealPlayer(TokenValue.White, color_player2, color_player2_name );
         } else {
-            players[0] = new RealPlayer(TokenValue.Black, color_player2);
-            players[1] = new RealPlayer(TokenValue.White, color_player1);
+            currPlayer.setText(color_player2_name);
+            players[0] = new RealPlayer(TokenValue.Black, color_player2, color_player2_name);
+            players[1] = new RealPlayer(TokenValue.White, color_player1, color_player1_name);
 
         }
     }
@@ -112,5 +124,16 @@ public class ReversiGameController implements Initializable {
     public void setBlackScore(String blackScore1) {
         blackScore.setText(blackScore1);
     }
+    @FXML
+    protected void returnToMenu(){
+        //return to the menu
+        Menu menu= new Menu();
+        Stage stage = (Stage) returnToMenuButton.getScene().getWindow();
+        try {
+            menu.start(stage);
+        } catch (Exception e) {
 
+        }
+    }
 }
+

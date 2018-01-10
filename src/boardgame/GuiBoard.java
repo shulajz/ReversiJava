@@ -13,6 +13,7 @@ import javafx.scene.shape.Rectangle;
 
 
 import java.awt.*;
+import java.awt.color.ColorSpace;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
@@ -54,7 +55,7 @@ public class GuiBoard extends GridPane {
         for (int i = 1; i < board.getDimensions(); i++) {
             for (int j = 1; j < board.getDimensions(); j++) {
                 Rectangle rec = new Rectangle(cellSize, cellSize,
-                        Color.YELLOW);
+                        Color.GREENYELLOW);
                 rec.setStroke(Color.BLACK);
                 rec.setOnMouseClicked(event -> {
                     List<Coordinate> validCoordinates = new ArrayList<Coordinate>();
@@ -72,15 +73,14 @@ public class GuiBoard extends GridPane {
                                 gameRules.flipTokens(coordinate, board,
                                         playerCurrentTurn);
                                 switchPlayer();
-                                int white = 0;
-                                int black = 0;
-                                board.calcResults(black, white);
+                                int[] sumScore = board.calcResults();
+                                int white = sumScore[0];
+                                int black = sumScore[1];
                                 System.out.println(black);
                                 System.out.println(white);
                                 gameController.setBlackScore(Integer.toString(black));
                                 gameController.setWhiteScore(Integer.toString(white));
-                                gameController.setCurrentPlayer(
-                                        playerCurrentTurn.getColor().toString());
+                                gameController.setCurrentPlayer(playerCurrentTurn.getColorName());
                                 draw(board.getTokens());
 
 
