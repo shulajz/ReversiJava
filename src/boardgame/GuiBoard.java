@@ -150,7 +150,7 @@ public class GuiBoard extends GridPane {
                 //System.out.println("no move for one player");
                 switchPlayer();
                 return NoMove;
-            }
+            }//
         }
         //draw all the possiblesMoves
         drawPossibleMoves(validCoordinates);
