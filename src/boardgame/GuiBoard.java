@@ -36,13 +36,13 @@ public class GuiBoard extends GridPane {
         }
         TokenValue blackTv = TokenValue.Black;
         this.playerCurrentTurn = players[blackTv.getValue()];
+        this.getChildren().clear();
+        int width = (int)this.getPrefWidth();
+        cellSize = width / board.getDimensions();
         initializeBoard();
     }
 
     public void initializeBoard(){
-        this.getChildren().clear();
-        int width = (int)this.getPrefWidth();
-        cellSize = width / board.getDimensions();
         for (int i = 1; i < board.getDimensions(); i++) {
             for (int j = 1; j < board.getDimensions(); j++) {
                 Rectangle rec = new Rectangle(cellSize, cellSize,
@@ -130,6 +130,7 @@ public class GuiBoard extends GridPane {
             }
         }
         //draw all the possiblesMoves
+        initializeBoard();
         for(int i=0; i<validCoordinates.size();i++){
             int row = validCoordinates.get(i).getRow();
             int col = validCoordinates.get(i).getCol();
