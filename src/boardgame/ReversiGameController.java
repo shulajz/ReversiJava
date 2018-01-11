@@ -80,7 +80,7 @@ public class ReversiGameController implements Initializable {
             String[] parts = lines[i].split(" ");
             switch (parts[0]) {
                 case "startPlayer:":
-                    if (parts[1] == "player1") {
+                    if (parts[1].equals( "player1")) {
                         open_player = 0;
                     } else {
                         open_player = 1;
@@ -139,7 +139,12 @@ public class ReversiGameController implements Initializable {
       //  message.setText("no move for both players!");
         System.out.println("no move for both players!");
     }
+
     public void handleNoMove(Player player){
+        //////before that we need to add event of key pressed and then do this..
+
+
+
         if (player == players[0]){
             currPlayer.setText(color_player1_name);
         }else{
