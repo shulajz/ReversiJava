@@ -83,7 +83,7 @@ public class GuiBoard extends GridPane {
         if(situation == NoMovesForAll){
             gameController.handleEndGame();
         }else if (situation == NoMove){
-            gameController.handleNoMove();
+            gameController.handleNoMove(playerCurrentTurn);
         }
     }
 

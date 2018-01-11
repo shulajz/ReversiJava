@@ -139,8 +139,12 @@ public class ReversiGameController implements Initializable {
       //  message.setText("no move for both players!");
         System.out.println("no move for both players!");
     }
-    public void handleNoMove(){
-
+    public void handleNoMove(Player player){
+        if (player == players[0]){
+            currPlayer.setText(color_player1_name);
+        }else{
+            currPlayer.setText(color_player2_name);
+        }
 //        message.setText("no move! please press any key to continue");
         System.out.println("no move! please press any key to continue");
     }
