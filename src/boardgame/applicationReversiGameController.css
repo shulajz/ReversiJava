@@ -11,7 +11,11 @@
 -fx-font-family: Arial;
 -fx-background-color: linear-gradient(to bottom right, yellow, green, yellow);
 }
-
+#noMovesForAllLabel{
+-fx-font-size: 20px;
+-fx-font-family: Arial;
+-fx-background-color: linear-gradient(to bottom right, yellow, green, yellow);
+}
 .button {
  -fx-text-fill: black;
  -fx-background-color: linear-gradient(to bottom right, green, yellow,
