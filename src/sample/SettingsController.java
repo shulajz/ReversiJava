@@ -20,9 +20,15 @@ import static java.lang.System.exit;
 public class SettingsController {
 
     ObservableList<String> colors = FXCollections.
-            observableArrayList("black", "white", "blue", "yellow", "red");
+            observableArrayList("black", "white", "blue", "green",
+                    "red", "orange", "pink", "brown", "purple", "gray");
     ObservableList<String> sizes = FXCollections.
-            observableArrayList("4x4", "5x5", "6x6", "7x7", "8x8");
+            observableArrayList("4x4", "5x5", "6x6",
+                    "7x7", "8x8", "9x9","10x10",
+                    "11x11", "12x12", "13x13", "14x14", "15x15",
+                    "16x16", "17x17","18x18","19x19", "20x20"
+
+                    );
     ObservableList<String> players = FXCollections.
             observableArrayList("player1", "player2");
 
@@ -95,4 +101,3 @@ public class SettingsController {
         return output;
     }
 }
-

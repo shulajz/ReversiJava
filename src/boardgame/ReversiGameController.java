@@ -144,10 +144,12 @@ public class ReversiGameController implements Initializable {
     }
     public void handleEndGame(Player player){
         guiBoard.setDisable(true);
-        if(player == players[0]) {
+        if(player == players[0]) {//black win
             noMovesForAllLabel.setText("game over! " + color_player1_name + " wins");
-        } else {
+        } else if (player == players[1]){//white win
             noMovesForAllLabel.setText("game over! " + color_player2_name + " wins");
+        }else{//tie
+            noMovesForAllLabel.setText("game over! tie");
         }
         noMovesForAllLabel.setVisible(true);
 
@@ -167,7 +169,9 @@ public class ReversiGameController implements Initializable {
             }else{
                 currPlayer.setText(color_player2_name);
             }
+            guiBoard.draw(board.getTokens());
         });
+
     }
 
 }

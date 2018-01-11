@@ -87,8 +87,10 @@ public class GuiBoard extends GridPane {
             Player player;
             if(blackPlayer > whitePlayer) { //black wins
                 player = players[0];
-            } else { //white wins
+            } else if (blackPlayer < whitePlayer){ //white wins
                 player = players[1];
+            }else {//tie
+                player = null;
             }
             gameController.handleEndGame(player);
 
@@ -131,6 +133,8 @@ public class GuiBoard extends GridPane {
         List<Coordinate> validCoordinates = new ArrayList<Coordinate>();
         gameRules.getLegalCoordinates(
                 board, playerCurrentTurn, validCoordinates);
+        //clear the board
+        initializeBoard();
         if (validCoordinates.isEmpty()) {
             switchPlayer();
             //checking if other player has a move
@@ -148,8 +152,6 @@ public class GuiBoard extends GridPane {
                 return NoMove;
             }
         }
-        //clear the board
-        initializeBoard();
         //draw all the possiblesMoves
         drawPossibleMoves(validCoordinates);
         return ThereIsMove;
