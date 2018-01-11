@@ -63,7 +63,6 @@ public class GuiBoard extends GridPane {
     }
 
     public void draw(Token[][] tokens) {
-
         spacialSituationsInGame();
         for (int i = 1; i < board.getDimensions(); i++) {
             for (int j = 1; j < board.getDimensions(); j++) {
@@ -129,18 +128,13 @@ public class GuiBoard extends GridPane {
                 return NoMove;
             }
         }
-        //draw all the possiblesMoves
+        //clear the board
         initializeBoard();
-        for(int i=0; i<validCoordinates.size();i++){
-            int row = validCoordinates.get(i).getRow();
-            int col = validCoordinates.get(i).getCol();
-            Rectangle rec = new Rectangle(cellSize, cellSize,
-                    Color.GRAY);
-            initializeRectangle(rec);
-            this.add(rec, col, row);
-        }
+        //draw all the possiblesMoves
+        drawPossibleMoves(validCoordinates);
         return ThereIsMove;
     }
+
     public void initializeRectangle(Rectangle rec){
         rec.setStroke(Color.BLACK);
         rec.setOnMouseClicked(event -> {
@@ -148,5 +142,16 @@ public class GuiBoard extends GridPane {
             double col = Math.ceil(event.getSceneX() / cellSize);
             clickEvent(row, col);
         });
+    }
+
+    public void drawPossibleMoves(List<Coordinate> validCoordinates){
+        for(int i=0; i<validCoordinates.size();i++){
+            int row = validCoordinates.get(i).getRow();
+            int col = validCoordinates.get(i).getCol();
+            Rectangle rec = new Rectangle(cellSize, cellSize,
+                    Color.DARKGRAY);
+            initializeRectangle(rec);
+            this.add(rec, col, row);
+        }
     }
 }
