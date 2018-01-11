@@ -84,15 +84,15 @@ public class GuiBoard extends GridPane {
             int[] sumScore = board.calcResults();
             int blackPlayer = sumScore[0];
             int whitePlayer = sumScore[1];
-            Player player;
+            Player winnerPlayer;
             if(blackPlayer > whitePlayer) { //black wins
-                player = players[0];
+                winnerPlayer = players[0];
             } else if (blackPlayer < whitePlayer){ //white wins
-                player = players[1];
+                winnerPlayer = players[1];
             }else {//tie
-                player = null;
+                winnerPlayer = null;
             }
-            gameController.handleEndGame(player);
+            gameController.handleEndGame(winnerPlayer);
 
         }else if (situation == NoMove){
             gameController.handleNoMove(playerCurrentTurn);
@@ -178,3 +178,4 @@ public class GuiBoard extends GridPane {
         }
     }
 }
+//
