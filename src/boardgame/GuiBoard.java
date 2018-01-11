@@ -48,6 +48,7 @@ public class GuiBoard extends GridPane {
                 Rectangle rec = new Rectangle(cellSize, cellSize,
                         Color.YELLOW);
                 initializeRectangle(rec);
+                //add rec to gridPane
                 this.add(rec, j, i);
             }
         }
@@ -63,6 +64,9 @@ public class GuiBoard extends GridPane {
     }
 
     public void draw(Token[][] tokens) {
+        //before every draw of the current board check if we in a
+        //spacial situations in the game like no move for one player
+        // or no move for all.
         spacialSituationsInGame();
         for (int i = 1; i < board.getDimensions(); i++) {
             for (int j = 1; j < board.getDimensions(); j++) {
@@ -70,7 +74,9 @@ public class GuiBoard extends GridPane {
             }
         }
     }
-
+    //this function check if we in spacial situations
+    // in the game like no move for one player or no move for all
+    // if so update the game manager about this that it will handle it
     public void spacialSituationsInGame(){
         Situation situation = checkGameFlowSituation();
         if(situation == NoMovesForAll){
@@ -79,13 +85,14 @@ public class GuiBoard extends GridPane {
             gameController.handleNoMove(playerCurrentTurn);
         }
     }
-
+    //in every clicked event we check if the click is valid coordinate
+    //if so we change it depend in the game rules, and the current player
     public void clickEvent(double row, double col){
         List<Coordinate> validCoordinates = new ArrayList<Coordinate>();
         Coordinate coordinate = new Coordinate((int)row, (int)col);
         gameRules.getLegalCoordinates(
                 board, playerCurrentTurn, validCoordinates);
-        if (!validCoordinates.isEmpty()) {//the player has a turn
+        if (!validCoordinates.isEmpty()) { //the player has a turn
             for (int k = 0; k < validCoordinates.size(); k++) {
                 //checks if the input is one of the legal coordinates
                 if (row == validCoordinates.get(k).getRow()
@@ -100,7 +107,9 @@ public class GuiBoard extends GridPane {
                     gameController.setBlackScore(Integer.toString(black));
                     gameController.setWhiteScore(Integer.toString(white));
                     gameController.setCurrentPlayer(playerCurrentTurn.getColorName());
+                    //if this the chosen rectangle we do the event and draw
                     draw(board.getTokens());
+                    break;//don't need to check more coordinate
                 }
             }
         }
@@ -134,7 +143,7 @@ public class GuiBoard extends GridPane {
         drawPossibleMoves(validCoordinates);
         return ThereIsMove;
     }
-
+    //this function get rectangle and add to him mouseClicked event
     public void initializeRectangle(Rectangle rec){
         rec.setStroke(Color.BLACK);
         rec.setOnMouseClicked(event -> {
@@ -143,14 +152,15 @@ public class GuiBoard extends GridPane {
             clickEvent(row, col);
         });
     }
-
+    //draw all thw possibles moves in the board
     public void drawPossibleMoves(List<Coordinate> validCoordinates){
         for(int i=0; i<validCoordinates.size();i++){
             int row = validCoordinates.get(i).getRow();
             int col = validCoordinates.get(i).getCol();
             Rectangle rec = new Rectangle(cellSize, cellSize,
-                    Color.DARKGRAY);
+                    Color.DARKGREEN);
             initializeRectangle(rec);
+            //add to the gridPane
             this.add(rec, col, row);
         }
     }
