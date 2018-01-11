@@ -26,7 +26,6 @@ public interface GameRules {
                                   List<Coordinate> coordinatesToFlip);
 
     void flipTokens(Coordinate inputCoordinate, Board board, Player player);
-    //
 
 };
 

@@ -34,6 +34,8 @@ public class ReversiGameController implements Initializable {
     private Label  player1Score;
     @FXML
     private Label  player2Score;
+    @FXML
+    private Label message;
 
     private String color_player1_name = "black";//default
     private String color_player2_name = "white";//default
@@ -70,8 +72,6 @@ public class ReversiGameController implements Initializable {
 
         } catch (IOException e) {
         }
-
-
     }
 
     public void getSettings(String stringFile) {
@@ -134,6 +134,15 @@ public class ReversiGameController implements Initializable {
         } catch (Exception e) {
 
         }
+    }
+    public void handleNoMovesForAll(){
+        message.setText("no move for both players!");
+    }
+    public void handleFullOfTokens(){
+        message.setText("game over!");
+    }
+    public void handleNoMove(){
+        message.setText("no move! please press any key to continue");
     }
 }
 

@@ -19,14 +19,6 @@ public class Cell {
     public TokenValue getTokenValue(){
         return tv;
     }
-
-    public void setCoordinate(Coordinate coordinate) {
-        this.coordinate = coordinate;
-    }
-
-    public void setTokenValue(TokenValue tv){
-        this.tv = tv;
-    }
 };
 
 

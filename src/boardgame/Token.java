@@ -25,16 +25,6 @@ public abstract class Token  {
         tv = tv1;
     }
 
-    public TokenValue getOppositeValue(TokenValue tv) {
-        if (tv == TokenValue.Black) {
-            return TokenValue.White;
-        } else if (tv == TokenValue.White) {
-            return TokenValue.Black;
-        } else {
-            return TokenValue.Empty;
-        }
-    }
-
     public boolean isWhite() {
         if (tv == TokenValue.White) {
             return true;
