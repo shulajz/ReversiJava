@@ -166,7 +166,6 @@ public class ReversiGameController implements Initializable {
         }else{
             currPlayer.setText(color_player2_name);
         }
-//        noMoveLabel.setText("no Move! please press here to continue");
         guiBoard.setDisable(true);
 
         noMoveLabel.setVisible(true);
@@ -175,9 +174,6 @@ public class ReversiGameController implements Initializable {
             guiBoard.setDisable(false);
         });
 
-//                btn.setOnAction(event -> {
-//            lbl.setText("Button clicked!");
-//        message.setText("no move! please press any key to continue");
         System.out.println("no move! please press any key to continue");
     }
 
