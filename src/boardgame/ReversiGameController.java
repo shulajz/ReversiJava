@@ -135,14 +135,15 @@ public class ReversiGameController implements Initializable {
 
         }
     }
-    public void handleNoMovesForAll(){
-        message.setText("no move for both players!");
-    }
-    public void handleFullOfTokens(){
-        message.setText("game over!");
+    public void handleEndGame(){
+      //  message.setText("no move for both players!");
+        System.out.println("no move for both players!");
     }
     public void handleNoMove(){
-        message.setText("no move! please press any key to continue");
+
+//        message.setText("no move! please press any key to continue");
+        System.out.println("no move! please press any key to continue");
     }
+
 }
 

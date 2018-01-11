@@ -81,11 +81,9 @@ public class GuiBoard extends GridPane {
     public void spacialSituationsInGame(){
         Situation situation = checkGameFlowSituation();
         if(situation == NoMovesForAll){
-            gameController.handleNoMovesForAll();
+            gameController.handleEndGame();
         }else if (situation == NoMove){
             gameController.handleNoMove();
-        }else if(board.isFullOfTokens()){
-            gameController.handleFullOfTokens();
         }
     }
 
