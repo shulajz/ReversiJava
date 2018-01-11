@@ -36,6 +36,10 @@ public class ReversiGameController implements Initializable {
     private Label  player2Score;
     @FXML
     private Label message;
+    @FXML
+    private Label noMoveLabel;
+    @FXML
+    private Label noMovesForAllLabel;
 
     private String color_player1_name = "black";//default
     private String color_player2_name = "white";//default
@@ -44,18 +48,22 @@ public class ReversiGameController implements Initializable {
     private Color color_player2 = Color.WHITE;//default
     private int open_player = 0;//default
     private Player[] players;
+    private GuiBoard guiBoard;
+    private Board board;
     @Override
     public void initialize(URL location, ResourceBundle
             resources) {
         ClassicRules classicRules = new ClassicRules();
         readFromSettingsFile();
         initializePlayers();
-        Board board = new Board(dim, classicRules.getInitialValues(dim));
-        GuiBoard boardTemp = new GuiBoard(board, players, classicRules, this);
-        boardTemp.setPrefWidth(400);
-        boardTemp.setPrefHeight(400);
-        root.getChildren().add(0, boardTemp);
-        boardTemp.draw(board.getTokens());
+        noMoveLabel.setVisible(false);
+        noMovesForAllLabel.setVisible(false);
+        board = new Board(dim, classicRules.getInitialValues(dim));
+        guiBoard = new GuiBoard(board, players, classicRules, this);
+        guiBoard.setPrefWidth(400);
+        guiBoard.setPrefHeight(400);
+        root.getChildren().add(0, guiBoard);
+        guiBoard.draw(board.getTokens());
         player1Score.setText(color_player1_name + " score");
         player2Score.setText(color_player2_name + " score");
     }
@@ -135,21 +143,40 @@ public class ReversiGameController implements Initializable {
 
         }
     }
-    public void handleEndGame(){
+    public void handleEndGame(Player player){
+        guiBoard.setDisable(true);
+        if(player == players[0]) {
+            noMovesForAllLabel.setText("game over! " + color_player1_name + " wins");
+        } else {
+            noMovesForAllLabel.setText("game over! " + color_player2_name + " wins");
+        }
+        noMovesForAllLabel.setVisible(true);
+
+        noMovesForAllLabel.setOnMouseClicked(event -> {
+            guiBoard.setDisable(false);
+        });
       //  message.setText("no move for both players!");
         System.out.println("no move for both players!");
     }
 
     public void handleNoMove(Player player){
         //////before that we need to add event of key pressed and then do this..
-
-
-
         if (player == players[0]){
             currPlayer.setText(color_player1_name);
         }else{
             currPlayer.setText(color_player2_name);
         }
+//        noMoveLabel.setText("no Move! please press here to continue");
+        guiBoard.setDisable(true);
+
+        noMoveLabel.setVisible(true);
+        noMoveLabel.setOnMouseClicked(event -> {
+            noMoveLabel.setVisible(false);
+            guiBoard.setDisable(false);
+        });
+
+//                btn.setOnAction(event -> {
+//            lbl.setText("Button clicked!");
 //        message.setText("no move! please press any key to continue");
         System.out.println("no move! please press any key to continue");
     }

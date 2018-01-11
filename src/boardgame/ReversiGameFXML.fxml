@@ -31,14 +31,16 @@
             <RowConstraints maxHeight="25.0" minHeight="25.0" prefHeight="25.0" />
         </rowConstraints>
          <children>
-            <VBox prefHeight="170.0" prefWidth="240.0" GridPane.columnSpan="2" GridPane.rowSpan="3">
+            <VBox prefHeight="197.0" prefWidth="357.0" GridPane.columnSpan="2" GridPane.rowSpan="3">
                <children>
                   <Label prefHeight="0.0" prefWidth="128.0" text="Current player is:" />
                   <Label fx:id="player1Score" text="Black scores:" />
                   <Label fx:id="player2Score" text="White scores:" />
+                  <Label fx:id="noMoveLabel" prefHeight="33.0" prefWidth="240.0" text="no move, please press here to continue" />
+                  <Label fx:id="noMovesForAllLabel" text="game over" />
                </children>
             </VBox>
-            <VBox prefHeight="79.0" prefWidth="70.0" GridPane.columnIndex="1" GridPane.columnSpan="3">
+            <VBox prefHeight="150.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.columnSpan="3">
                <children>
                   <Label fx:id="currPlayer" text="Black" />
                   <Label fx:id="blackScore" text="2" />

@@ -80,7 +80,17 @@ public class GuiBoard extends GridPane {
     public void spacialSituationsInGame(){
         Situation situation = checkGameFlowSituation();
         if(situation == NoMovesForAll){
-            gameController.handleEndGame();
+            int[] sumScore = board.calcResults();
+            int blackPlayer = sumScore[0];
+            int whitePlayer = sumScore[1];
+            Player player;
+            if(blackPlayer > whitePlayer) { //black wins
+                player = players[0];
+            } else { //white wins
+                player = players[1];
+            }
+            gameController.handleEndGame(player);
+
         }else if (situation == NoMove){
             gameController.handleNoMove(playerCurrentTurn);
         }
