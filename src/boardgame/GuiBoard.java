@@ -47,13 +47,7 @@ public class GuiBoard extends GridPane {
             for (int j = 1; j < board.getDimensions(); j++) {
                 Rectangle rec = new Rectangle(cellSize, cellSize,
                         Color.YELLOW);
-                rec.setStroke(Color.BLACK);
-                rec.setOnMouseClicked(event -> {
-                    double row = Math.ceil(event.getSceneY()/cellSize);
-                    double col = Math.ceil(event.getSceneX()/cellSize);
-                    clickEvent(row, col);
-                });
-
+                initializeRectangle(rec);
                 this.add(rec, j, i);
             }
         }
@@ -135,6 +129,23 @@ public class GuiBoard extends GridPane {
                 return NoMove;
             }
         }
+        //draw all the possiblesMoves
+        for(int i=0; i<validCoordinates.size();i++){
+            int row = validCoordinates.get(i).getRow();
+            int col = validCoordinates.get(i).getCol();
+            Rectangle rec = new Rectangle(cellSize, cellSize,
+                    Color.GRAY);
+            initializeRectangle(rec);
+            this.add(rec, col, row);
+        }
         return ThereIsMove;
+    }
+    public void initializeRectangle(Rectangle rec){
+        rec.setStroke(Color.BLACK);
+        rec.setOnMouseClicked(event -> {
+            double row = Math.ceil(event.getSceneY() / cellSize);
+            double col = Math.ceil(event.getSceneX() / cellSize);
+            clickEvent(row, col);
+        });
     }
 }
