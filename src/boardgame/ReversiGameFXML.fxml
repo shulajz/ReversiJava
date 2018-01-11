@@ -36,7 +36,8 @@
                   <Label prefHeight="0.0" prefWidth="128.0" text="Current player is:" />
                   <Label fx:id="player1Score" text="Black scores:" />
                   <Label fx:id="player2Score" text="White scores:" />
-                  <Label fx:id="noMoveLabel" prefHeight="33.0" prefWidth="240.0" text="no move, please press here to continue" />
+                  <Label GridPane.columnSpan="2" fx:id="noMoveLabel" prefHeight="49.0" prefWidth="300.0"
+                         text="no move! please press here to continue" />
                   <Label fx:id="noMovesForAllLabel" text="game over" />
                </children>
             </VBox>

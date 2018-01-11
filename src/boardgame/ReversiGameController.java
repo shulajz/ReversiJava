@@ -7,6 +7,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import sample.Menu;
 
@@ -34,8 +35,6 @@ public class ReversiGameController implements Initializable {
     private Label  player1Score;
     @FXML
     private Label  player2Score;
-    @FXML
-    private Label message;
     @FXML
     private Label noMoveLabel;
     @FXML
@@ -155,26 +154,20 @@ public class ReversiGameController implements Initializable {
         noMovesForAllLabel.setOnMouseClicked(event -> {
             guiBoard.setDisable(false);
         });
-      //  message.setText("no move for both players!");
-        System.out.println("no move for both players!");
     }
 
     public void handleNoMove(Player player){
-        //////before that we need to add event of key pressed and then do this..
-        if (player == players[0]){
-            currPlayer.setText(color_player1_name);
-        }else{
-            currPlayer.setText(color_player2_name);
-        }
         guiBoard.setDisable(true);
-
         noMoveLabel.setVisible(true);
         noMoveLabel.setOnMouseClicked(event -> {
             noMoveLabel.setVisible(false);
             guiBoard.setDisable(false);
+            if (player == players[0]){
+                currPlayer.setText(color_player1_name);
+            }else{
+                currPlayer.setText(color_player2_name);
+            }
         });
-
-        System.out.println("no move! please press any key to continue");
     }
 
 }

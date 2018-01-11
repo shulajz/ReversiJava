@@ -1,10 +1,17 @@
 
 .label {
--fx-font-size: 15px;
+-fx-font-size: 14px;
 -fx-font-family: Arial;
 -fx-fill: rgb(85,87,83);
- -fx-background-color: linear-gradient(to bottom right, yellow, yellow, yellow);
+
+
 }
+#noMoveLabel{
+-fx-font-size: 12px;
+-fx-font-family: Arial;
+-fx-background-color: linear-gradient(to bottom right, yellow, green, yellow);
+}
+
 .button {
  -fx-text-fill: black;
  -fx-background-color: linear-gradient(to bottom right, green, yellow,
