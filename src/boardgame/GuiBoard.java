@@ -56,7 +56,7 @@ public class GuiBoard extends GridPane {
 
     public void switchPlayer() {
         if (playerCurrentTurn.getValue() == TokenValue.White) {
-            playerCurrentTurn =players[0];
+            playerCurrentTurn = players[0];
         } else if (playerCurrentTurn.getValue() == TokenValue.Black) {
             playerCurrentTurn = players[1];
 
@@ -167,7 +167,7 @@ public class GuiBoard extends GridPane {
     }
     //draw all thw possibles moves in the board
     public void drawPossibleMoves(List<Coordinate> validCoordinates){
-        for(int i=0; i<validCoordinates.size();i++){
+        for(int i = 0; i < validCoordinates.size(); i++){
             int row = validCoordinates.get(i).getRow();
             int col = validCoordinates.get(i).getCol();
             Rectangle rec = new Rectangle(cellSize, cellSize,

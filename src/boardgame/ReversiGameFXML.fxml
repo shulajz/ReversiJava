@@ -10,10 +10,10 @@
 
 <HBox fx:id="root" prefHeight="222.0" prefWidth="240.0" spacing="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boardgame.ReversiGameController">
    <children>
-      <GridPane prefHeight="240.0" prefWidth="240.0">
+      <GridPane prefHeight="240.0" prefWidth="500.0">
         <columnConstraints>
-          <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="191.0" minWidth="10.0" prefWidth="134.0" />
-          <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="148.0" minWidth="0.0" prefWidth="106.0" />
+          <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="191.0" minWidth="10.0" prefWidth="120.0" />
+          <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="148.0" minWidth="0.0" prefWidth="120.0" />
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="0.0" prefWidth="0.0" />
             <ColumnConstraints maxWidth="144.0" minWidth="0.0" prefWidth="0.0" />
         </columnConstraints>
@@ -33,22 +33,24 @@
          <children>
             <VBox prefHeight="197.0" prefWidth="357.0" GridPane.columnSpan="2" GridPane.rowSpan="3">
                <children>
-                  <Label prefHeight="0.0" prefWidth="128.0" text="Current player is:" />
-                  <Label fx:id="player1Score" text="Black scores:" />
-                  <Label fx:id="player2Score" text="White scores:" />
-                  <Label GridPane.columnSpan="2" fx:id="noMoveLabel" prefHeight="49.0" prefWidth="300.0"
-                         text="no move! please press here to continue" />
+                  <Label prefHeight="0.0" prefWidth="300.0" text="Current player is:" />
+                  <Label fx:id="player1Score" text="black score:" prefWidth="150.0"/>
+                  <Label fx:id="player2Score" text="white score:" prefWidth="150.0"/>
+                  <Label fx:id="noMoveLabel" prefHeight="49.0" prefWidth="300.0"
+                         text="no move! please press here to continue" GridPane.columnSpan="2" />
                   <Label fx:id="noMovesForAllLabel" text="game over" />
                </children>
             </VBox>
-            <VBox prefHeight="150.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.columnSpan="3">
+            <VBox prefHeight="150.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.columnSpan="2">
                <children>
                   <Label fx:id="currPlayer" text="Black" />
                   <Label fx:id="blackScore" text="2" />
                   <Label fx:id="whiteScore" text="2" />
                </children>
             </VBox>
-               <Button fx:id="returnToMenuButton" mnemonicParsing="false" onAction="#returnToMenu" prefHeight="25.0" prefWidth="151.0" text="return menu" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="10" />
+               <Button fx:id="returnToMenuButton" mnemonicParsing="false"
+                       onAction="#returnToMenu" prefHeight="25.0" prefWidth="151.0"
+                       text="return menu" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="10" />
          </children>
       </GridPane>
    </children>

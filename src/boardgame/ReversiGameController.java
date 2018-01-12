@@ -21,6 +21,8 @@ public class ReversiGameController implements Initializable {
 
     final static int PLAYER1 = 0;
     final static int PLAYER2 = 1;
+    final static int DEFAULT_BOARD_DIM = 8;
+    final static int BOARD_SIZE = 400;
 
     @FXML
     private HBox root;
@@ -43,7 +45,7 @@ public class ReversiGameController implements Initializable {
 
     private String color_player1_name = "black";//default
     private String color_player2_name = "white";//default
-    private int dim = 9;//default
+    private int dim = DEFAULT_BOARD_DIM + 1;//default
     private Color color_player1 = Color.BLACK;//default
     private Color color_player2 = Color.WHITE;//default
     private int open_player = PLAYER1;//default
@@ -60,12 +62,11 @@ public class ReversiGameController implements Initializable {
         noMovesForAllLabel.setVisible(false);
         board = new Board(dim, classicRules.getInitialValues(dim));
         guiBoard = new GuiBoard(board, players, classicRules, this);
-        guiBoard.setPrefWidth(400);
-        guiBoard.setPrefHeight(400);
+        guiBoard.setPrefWidth(BOARD_SIZE);
+        guiBoard.setPrefHeight(BOARD_SIZE);
         root.getChildren().add(0, guiBoard);
         guiBoard.draw(board.getTokens());
         displayPlayersScore();
-
 
         root.widthProperty().addListener((observable, oldValue, newValue) -> {
             double boardNewWidth = newValue.doubleValue() - 120;
@@ -82,11 +83,11 @@ public class ReversiGameController implements Initializable {
 
     public void displayPlayersScore(){
         if (open_player == PLAYER1) {
-            player1Score.setText(color_player1_name + " score");
-            player2Score.setText(color_player2_name + " score");
+            player1Score.setText(color_player1_name + " score:");
+            player2Score.setText(color_player2_name + " score:");
         }else{
-            player1Score.setText(color_player2_name + " score");
-            player2Score.setText(color_player1_name + " score");
+            player1Score.setText(color_player2_name + " score:");
+            player2Score.setText(color_player1_name + " score:");
         }
     }
     public void readFromSettingsFile() {

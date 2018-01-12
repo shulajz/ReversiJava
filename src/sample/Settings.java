@@ -11,13 +11,14 @@ import java.io.IOException;
 import static javafx.fxml.FXMLLoader.load;
 
 public class Settings extends Application {
+    final static int SCENE_SIZE = 400;
     @Override
     public void start(Stage primaryStage) throws Exception{
 
         try {
 
             GridPane root = (GridPane) load(getClass().getResource("SettingsFXML.fxml"));
-            Scene scene = new Scene(root,400,350);
+            Scene scene = new Scene(root,SCENE_SIZE,SCENE_SIZE - 50);
             scene.getStylesheets().add(getClass().getResource("settingsApplication.css").toExternalForm());
             primaryStage.setTitle("Settings");
             primaryStage.setScene(scene);
