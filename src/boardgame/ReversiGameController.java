@@ -19,7 +19,8 @@ import java.util.ResourceBundle;
 
 public class ReversiGameController implements Initializable {
 
-
+    final static int PLAYER1 = 0;
+    final static int PLAYER2 = 1;
 
     @FXML
     private HBox root;
@@ -45,7 +46,7 @@ public class ReversiGameController implements Initializable {
     private int dim = 9;//default
     private Color color_player1 = Color.BLACK;//default
     private Color color_player2 = Color.WHITE;//default
-    private int open_player = 0;//default
+    private int open_player = PLAYER1;//default
     private Player[] players;
     private GuiBoard guiBoard;
     private Board board;
@@ -68,7 +69,7 @@ public class ReversiGameController implements Initializable {
     }
 
     public void displayPlayersScore(){
-        if (open_player == 0) {
+        if (open_player == PLAYER1) {
             player1Score.setText(color_player1_name + " score");
             player2Score.setText(color_player2_name + " score");
         }else{
@@ -97,9 +98,9 @@ public class ReversiGameController implements Initializable {
             switch (parts[0]) {
                 case "startPlayer:":
                     if (parts[1].equals( "player1")) {
-                        open_player = 0;
+                        open_player = PLAYER1;
                     } else {
-                        open_player = 1;
+                        open_player = PLAYER2;
                     }
                     break;
                 case "colorPlayer1:":
@@ -119,7 +120,7 @@ public class ReversiGameController implements Initializable {
 
     public void initializePlayers() {
         players = new Player[2];
-        if (open_player == 0) {
+        if (open_player == PLAYER1) {
             currPlayer.setText(color_player1_name);
             players[0] = new RealPlayer(TokenValue.Black, color_player1,color_player1_name);
             players[1] = new RealPlayer(TokenValue.White, color_player2, color_player2_name );
@@ -154,9 +155,17 @@ public class ReversiGameController implements Initializable {
     public void handleEndGame(Player player){
         guiBoard.setDisable(true);
         if(player == players[0]) {//black win
-            noMovesForAllLabel.setText("game over! " + color_player1_name + " wins");
-        } else if (player == players[1]){//white win
-            noMovesForAllLabel.setText("game over! " + color_player2_name + " wins");
+            if (open_player == PLAYER1){
+                noMovesForAllLabel.setText("game over! " + color_player1_name + " wins");
+            }else{
+                noMovesForAllLabel.setText("game over! " + color_player2_name + " wins");
+            }
+        } else if (player == players[1]){
+            if (open_player == PLAYER1){//
+                noMovesForAllLabel.setText("game over! " + color_player2_name + " wins");
+            }else{
+                noMovesForAllLabel.setText("game over! " + color_player1_name + " wins");
+            }
         }else{//tie
             noMovesForAllLabel.setText("game over! tie");
         }
