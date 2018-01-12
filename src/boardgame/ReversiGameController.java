@@ -66,6 +66,18 @@ public class ReversiGameController implements Initializable {
         guiBoard.draw(board.getTokens());
         displayPlayersScore();
 
+
+        root.widthProperty().addListener((observable, oldValue, newValue) -> {
+            double boardNewWidth = newValue.doubleValue() - 120;
+            guiBoard.setPrefWidth(boardNewWidth);
+            guiBoard.draw(board.getTokens());
+        });
+
+        root.heightProperty().addListener((observable, oldValue, newValue) -> {
+            guiBoard.setPrefHeight(newValue.doubleValue());
+            guiBoard.draw(board.getTokens());
+        });
+
     }
 
     public void displayPlayersScore(){
@@ -152,15 +164,15 @@ public class ReversiGameController implements Initializable {
 
         }
     }
-    public void handleEndGame(Player player){
+    public void handleEndGame(Player winnerPlayer){
         guiBoard.setDisable(true);
-        if(player == players[0]) {//black win
+        if(winnerPlayer == players[0]) {//black win
             if (open_player == PLAYER1){
                 noMovesForAllLabel.setText("game over! " + color_player1_name + " wins");
             }else{
                 noMovesForAllLabel.setText("game over! " + color_player2_name + " wins");
             }
-        } else if (player == players[1]){
+        } else if (winnerPlayer == players[1]){
             if (open_player == PLAYER1){//
                 noMovesForAllLabel.setText("game over! " + color_player2_name + " wins");
             }else{
