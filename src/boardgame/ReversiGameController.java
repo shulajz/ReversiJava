@@ -63,10 +63,19 @@ public class ReversiGameController implements Initializable {
         guiBoard.setPrefHeight(400);
         root.getChildren().add(0, guiBoard);
         guiBoard.draw(board.getTokens());
-        player1Score.setText(color_player1_name + " score");
-        player2Score.setText(color_player2_name + " score");
+        displayPlayersScore();
+
     }
 
+    public void displayPlayersScore(){
+        if (open_player == 0) {
+            player1Score.setText(color_player1_name + " score");
+            player2Score.setText(color_player2_name + " score");
+        }else{
+            player1Score.setText(color_player2_name + " score");
+            player2Score.setText(color_player1_name + " score");
+        }
+    }
     public void readFromSettingsFile() {
         try (BufferedReader br = new BufferedReader(new FileReader("settingsFile.txt"))) {
 
