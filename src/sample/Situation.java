@@ -1,5 +1,5 @@
 
-package boardgame;
+package sample;
 enum Situation {
     NoMovesForAll, ThereIsMove, NoMove
 }

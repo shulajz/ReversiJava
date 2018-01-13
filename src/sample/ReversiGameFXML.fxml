@@ -8,7 +8,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<HBox fx:id="root" prefHeight="222.0" prefWidth="240.0" spacing="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="boardgame.ReversiGameController">
+<HBox fx:id="root" prefHeight="222.0" prefWidth="240.0"
+      spacing="10" xmlns="http://javafx.com/javafx/8"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="boardgame.ReversiGameController">
    <children>
       <GridPane prefHeight="240.0" prefWidth="500.0">
         <columnConstraints>

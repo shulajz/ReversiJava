@@ -1,5 +1,6 @@
-package boardgame;
+package sample;
 
+import boardgame.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
@@ -7,9 +8,11 @@ import javafx.scene.shape.Rectangle;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import static boardgame.Situation.NoMove;
-import static boardgame.Situation.NoMovesForAll;
-import static boardgame.Situation.ThereIsMove;
+
+import static sample.Situation.NoMove;
+import static sample.Situation.NoMovesForAll;
+import static sample.Situation.ThereIsMove;
+
 
 public class GuiBoard extends GridPane {
     private int cellSize;

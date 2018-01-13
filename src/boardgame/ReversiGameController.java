@@ -1,5 +1,5 @@
 package boardgame;
-
+import boardgame.Board;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -9,6 +9,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import sample.GuiBoard;
 import sample.Menu;
 
 import java.io.BufferedReader;
