@@ -13,9 +13,7 @@ public interface TokenFactory {
     Token Create();
 
 
-//    public abstract Token Create(int x);
 
 };
 
 
-//#endif //OTHELLO_TOKENFACTORY_H

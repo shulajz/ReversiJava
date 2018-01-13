@@ -18,9 +18,7 @@ public abstract class Token  {
     }
 
     abstract public void draw(int i, int j, GridPane gridPane, int radius,Player[] players);
-//    {
 
-//    }
     void setValue(TokenValue tv1) {
         tv = tv1;
     }

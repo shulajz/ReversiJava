@@ -3,14 +3,9 @@
 //
 
 package boardgame;
-import boardgame.Board;
-import boardgame.Coordinate;
-import boardgame.GameRules;
 
-import boardgame.TokenValue;
 import javafx.scene.paint.Color;
 
-import java.util.List;
 
 
 public abstract class Player {

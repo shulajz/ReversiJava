@@ -92,7 +92,8 @@ public class ReversiGameController implements Initializable {
         }
     }
     public void readFromSettingsFile() {
-        try (BufferedReader br = new BufferedReader(new FileReader("settingsFile.txt"))) {
+        try (BufferedReader br = new BufferedReader
+                (new FileReader("settingsFile.txt"))) {
 
             String sCurrentLine;
 

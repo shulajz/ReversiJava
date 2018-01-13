@@ -1,8 +1,4 @@
-//public enum TokenValue {
-//    Black,
-//    White,
-//    Empty,
-//}
+
 package boardgame;
 
 public enum TokenValue {
