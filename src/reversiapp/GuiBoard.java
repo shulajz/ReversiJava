@@ -68,20 +68,20 @@ public class GuiBoard extends GridPane {
     }
 
     public void draw(Token[][] tokens) {
-        //before every draw of the current board check if we in a
-        //spacial situations in the game like no move for one player
+        //before every draw of the current board check if we're in a
+        //special situations in the game like no move for one player
         // or no move for all.
-        spacialSituationsInGame();
+        specialSituationsInGame();
         for (int i = 1; i < board.getDimensions(); i++) {
             for (int j = 1; j < board.getDimensions(); j++) {
                 tokens[i][j].draw(i, j, this, cellSize/2, players);
             }
         }
     }
-    //this function check if we in spacial situations
+    //this function checks if we're in special situations
     // in the game like no move for one player or no move for all
     // if so update the game manager about this that it will handle it
-    public void spacialSituationsInGame(){
+    public void specialSituationsInGame(){
         Situation situation = checkGameFlowSituation();
         if(situation == NoMovesForAll){
             //check Who Win
@@ -151,7 +151,6 @@ public class GuiBoard extends GridPane {
             if (validCoordinates1.isEmpty()) {//no moves for all
                 return NoMovesForAll;
             } else { //no moves only for current player
-                //System.out.println("no move for one player");
                 switchPlayer();
                 return NoMove;
             }
@@ -160,7 +159,7 @@ public class GuiBoard extends GridPane {
         drawPossibleMoves(validCoordinates);
         return ThereIsMove;
     }
-    //this function get rectangle and add to him mouseClicked event
+    //this function receives a rectangle and adds to him mouseClicked event
     public void initializeRectangle(Rectangle rec){
         rec.setStroke(Color.BLACK);
         rec.setOnMouseClicked(event -> {

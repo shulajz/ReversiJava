@@ -61,7 +61,6 @@ public class SettingsController {
             sameColorMessageLabel.setOnMouseClicked(event -> {
                 sameColorMessageLabel.setVisible(false);
                 });
-//            }
         }
 
         writeToSettingFile(startPlayer,
