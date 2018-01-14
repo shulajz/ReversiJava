@@ -176,7 +176,7 @@ public class ReversiGameController implements Initializable {
         }
     }
     public void handleEndGame(Player winnerPlayer){
-        guiBoard.setDisable(true);
+        //guiBoard.setDisable(true);
         if(winnerPlayer == players[0]) {//black win
             if (open_player == PLAYER1){
                 alert.setHeaderText("game over! " + color_player1_name + " wins");

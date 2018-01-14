@@ -75,18 +75,19 @@ public class GuiBoard extends GridPane {
         //before every draw of the current board check if we're in a
         //special situations in the game like no move for one player
         // or no move for all.
-        specialSituationsInGame();
+        Situation situation = checkGameFlowSituation();
         for (int i = 1; i < board.getDimensions(); i++) {
             for (int j = 1; j < board.getDimensions(); j++) {
                 tokens[i][j].draw(i, j, this, cellSize/2, players);
             }
         }
+        handleSpecialSituationsInGame(situation);
     }
     //this function checks if we're in special situations
     // in the game like no move for one player or no move for all
     // if so update the game manager about this that it will handle it
-    public void specialSituationsInGame(){
-        Situation situation = checkGameFlowSituation();
+    public void handleSpecialSituationsInGame(Situation situation){
+
         if(situation == NoMovesForAll){
             //check Who Win
             int[] sumScore = board.calcResults();
@@ -141,7 +142,7 @@ public class GuiBoard extends GridPane {
         List<Coordinate> validCoordinates = new ArrayList<Coordinate>();
         gameRules.getLegalCoordinates(
                 board, playerCurrentTurn, validCoordinates);
-        //clear the board
+        //clear the possiblesMoves
         initializeBoard();
         if (validCoordinates.isEmpty()) {
             switchPlayer();
@@ -153,6 +154,7 @@ public class GuiBoard extends GridPane {
             switchPlayer();
             //the player doesn't have any moves
             if (validCoordinates1.isEmpty()) {//no moves for all
+
                 return NoMovesForAll;
             } else { //no moves only for current player
                 switchPlayer();
