@@ -1,4 +1,4 @@
-package sample;
+package reversiapp;
 
 import boardgame.*;
 import javafx.fxml.FXMLLoader;
@@ -9,9 +9,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static sample.Situation.NoMove;
-import static sample.Situation.NoMovesForAll;
-import static sample.Situation.ThereIsMove;
+import static reversiapp.Situation.NoMove;
+import static reversiapp.Situation.NoMovesForAll;
+import static reversiapp.Situation.ThereIsMove;
 
 
 public class GuiBoard extends GridPane {

@@ -1,6 +1,5 @@
-package sample;
+package reversiapp;
 
-import sample.ReversiGame;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
