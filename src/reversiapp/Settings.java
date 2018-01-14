@@ -16,7 +16,8 @@ public class Settings extends Application {
 
             GridPane root = (GridPane) load(getClass().getResource("SettingsFXML.fxml"));
             Scene scene = new Scene(root,SCENE_SIZE,SCENE_SIZE - 50);
-            scene.getStylesheets().add(getClass().getResource("settingsApplication.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource(
+                    "settingsApplication.css").toExternalForm());
             primaryStage.setTitle("Settings");
             primaryStage.setScene(scene);
             primaryStage.show();

@@ -67,6 +67,10 @@ public class GuiBoard extends GridPane {
         }
     }
 
+    /**
+     * this method draws the tokens of the game
+     * @param tokens
+     */
     public void draw(Token[][] tokens) {
         //before every draw of the current board check if we're in a
         //special situations in the game like no move for one player
