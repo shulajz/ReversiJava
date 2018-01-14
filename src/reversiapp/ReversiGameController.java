@@ -42,10 +42,6 @@ public class ReversiGameController implements Initializable {
     private Label  player1Score;
     @FXML
     private Label  player2Score;
-    @FXML
-    private Label noMoveLabel;
-    @FXML
-    private Label noMovesForAllLabel;
 
     private String color_player1_name = "black";//default
     private String color_player2_name = "white";//default
@@ -62,13 +58,9 @@ public class ReversiGameController implements Initializable {
         alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Information Dialog");
 
-
-//        alert.setContentText("I have a great message for you!");
         ClassicRules classicRules = new ClassicRules();
         readFromSettingsFile();
         initializePlayers();
-        noMoveLabel.setVisible(false);
-        noMovesForAllLabel.setVisible(false);
         board = new Board(dim, classicRules.getInitialValues(dim));
         guiBoard = new GuiBoard(board, players, classicRules, this);
         guiBoard.setPrefWidth(BOARD_SIZE);
@@ -193,28 +185,18 @@ public class ReversiGameController implements Initializable {
             alert.setHeaderText("game over! tie");
         }
         alert.showAndWait();
-//        noMovesForAllLabel.setVisible(true);
-
-//        noMovesForAllLabel.setOnMouseClicked(event -> {
-//            guiBoard.setDisable(false);
-//        });
     }
 
     public void handleNoMove(Player player){
-//        guiBoard.setDisable(true);
         alert.setHeaderText("sorry, you have no move");
         alert.showAndWait();
-//        noMoveLabel.setVisible(true);
-//        noMoveLabel.setOnMouseClicked(event -> {
-//            noMoveLabel.setVisible(false);
-//            guiBoard.setDisable(false);
+
             if (player == players[0]){
                 currPlayer.setText(color_player1_name);
             }else{
                 currPlayer.setText(color_player2_name);
             }
             guiBoard.draw(board.getTokens());
-//        });
 
     }
 

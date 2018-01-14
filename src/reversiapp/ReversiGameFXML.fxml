@@ -8,9 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<HBox fx:id="root" prefHeight="222.0" prefWidth="240.0"
-      spacing="10" xmlns="http://javafx.com/javafx/8"
-      xmlns:fx="http://javafx.com/fxml/1" fx:controller="reversiapp.ReversiGameController">
+<HBox fx:id="root" prefHeight="222.0" prefWidth="240.0" spacing="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="reversiapp.ReversiGameController">
    <children>
       <GridPane prefHeight="240.0" prefWidth="500.0">
         <columnConstraints>
@@ -36,11 +34,8 @@
             <VBox prefHeight="197.0" prefWidth="357.0" GridPane.columnSpan="2" GridPane.rowSpan="3">
                <children>
                   <Label prefHeight="0.0" prefWidth="300.0" text="Current player is:" />
-                  <Label fx:id="player1Score" text="black score:" prefWidth="150.0"/>
-                  <Label fx:id="player2Score" text="white score:" prefWidth="150.0"/>
-                  <Label fx:id="noMoveLabel" prefHeight="49.0" prefWidth="300.0"
-                         text="no move! please press here to continue" GridPane.columnSpan="2" />
-                  <Label fx:id="noMovesForAllLabel" text="game over" />
+                  <Label fx:id="player1Score" prefWidth="150.0" text="black score:" />
+                  <Label fx:id="player2Score" prefWidth="150.0" text="white score:" />
                </children>
             </VBox>
             <VBox prefHeight="150.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.columnSpan="2">
@@ -50,9 +45,7 @@
                   <Label fx:id="whiteScore" text="2" />
                </children>
             </VBox>
-               <Button fx:id="returnToMenuButton" mnemonicParsing="false"
-                       onAction="#returnToMenu" prefHeight="25.0" prefWidth="151.0"
-                       text="return menu" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="10" />
+               <Button fx:id="returnToMenuButton" mnemonicParsing="false" onAction="#returnToMenu" prefHeight="25.0" prefWidth="151.0" text="return menu" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="10" />
          </children>
       </GridPane>
    </children>
