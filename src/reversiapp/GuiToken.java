@@ -31,6 +31,5 @@ public class GuiToken extends Token {
 
         }
     }
-
 }
 
