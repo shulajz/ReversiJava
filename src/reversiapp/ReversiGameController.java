@@ -2,6 +2,7 @@ package reversiapp;
 import boardgame.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
@@ -17,6 +18,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ReversiGameController implements Initializable {
+//    Alert alert = new Alert(AlertType.INFORMATION);
+
 
     final static int PLAYER1 = 0;
     final static int PLAYER2 = 1;
@@ -25,6 +28,8 @@ public class ReversiGameController implements Initializable {
 
     @FXML
     private HBox root;
+    @FXML
+    private Alert alert;
     @FXML
     private Button returnToMenuButton;
     @FXML
@@ -54,6 +59,11 @@ public class ReversiGameController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle
             resources) {
+        alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information Dialog");
+
+
+//        alert.setContentText("I have a great message for you!");
         ClassicRules classicRules = new ClassicRules();
         readFromSettingsFile();
         initializePlayers();
@@ -169,39 +179,42 @@ public class ReversiGameController implements Initializable {
         guiBoard.setDisable(true);
         if(winnerPlayer == players[0]) {//black win
             if (open_player == PLAYER1){
-                noMovesForAllLabel.setText("game over! " + color_player1_name + " wins");
+                alert.setHeaderText("game over! " + color_player1_name + " wins");
             }else{
-                noMovesForAllLabel.setText("game over! " + color_player2_name + " wins");
+                alert.setHeaderText("game over! " + color_player2_name + " wins");
             }
         } else if (winnerPlayer == players[1]){
             if (open_player == PLAYER1){//
-                noMovesForAllLabel.setText("game over! " + color_player2_name + " wins");
+                alert.setHeaderText("game over! " + color_player2_name + " wins");
             }else{
-                noMovesForAllLabel.setText("game over! " + color_player1_name + " wins");
+                alert.setHeaderText("game over! " + color_player1_name + " wins");
             }
         }else{//tie
-            noMovesForAllLabel.setText("game over! tie");
+            alert.setHeaderText("game over! tie");
         }
-        noMovesForAllLabel.setVisible(true);
+        alert.showAndWait();
+//        noMovesForAllLabel.setVisible(true);
 
-        noMovesForAllLabel.setOnMouseClicked(event -> {
-            guiBoard.setDisable(false);
-        });
+//        noMovesForAllLabel.setOnMouseClicked(event -> {
+//            guiBoard.setDisable(false);
+//        });
     }
 
     public void handleNoMove(Player player){
-        guiBoard.setDisable(true);
-        noMoveLabel.setVisible(true);
-        noMoveLabel.setOnMouseClicked(event -> {
-            noMoveLabel.setVisible(false);
-            guiBoard.setDisable(false);
+//        guiBoard.setDisable(true);
+        alert.setHeaderText("sorry, you have no move");
+        alert.showAndWait();
+//        noMoveLabel.setVisible(true);
+//        noMoveLabel.setOnMouseClicked(event -> {
+//            noMoveLabel.setVisible(false);
+//            guiBoard.setDisable(false);
             if (player == players[0]){
                 currPlayer.setText(color_player1_name);
             }else{
                 currPlayer.setText(color_player2_name);
             }
             guiBoard.draw(board.getTokens());
-        });
+//        });
 
     }
 
