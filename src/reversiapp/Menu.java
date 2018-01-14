@@ -29,9 +29,11 @@ public class Menu extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         try {
-            GridPane root = (GridPane) FXMLLoader.load(getClass().getResource("MenuFXML.fxml"));
+            GridPane root = (GridPane) FXMLLoader.load(getClass().getResource(
+                    "MenuFXML.fxml"));
             Scene scene = new Scene(root, SCENE_SIZE, SCENE_SIZE/2);
-            scene.getStylesheets().add(getClass().getResource("menuApplication.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource(
+                    "menuApplication.css").toExternalForm());
             primaryStage.setTitle("Menu");
             primaryStage.setScene(scene);
             primaryStage.show();
