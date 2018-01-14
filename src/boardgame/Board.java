@@ -6,7 +6,8 @@
  */
 package boardgame;
 
-import java.util.ArrayList;
+import reversiapp.GuiTokenFactory;
+
 import java.util.List;
 
 import static boardgame.TokenValue.Black;
@@ -15,7 +16,6 @@ import static boardgame.TokenValue.White;
 
 public class Board {
     private Token[][] boardArr;
-    private BoardGraphic m_boardGraphic;
     private int dimensions;
     private TokenFactory pTokenFactory;
 /**
@@ -45,25 +45,6 @@ public class Board {
         }
     }
 
-    public Board(Board oldBoard) {
-        this.dimensions = oldBoard.dimensions;
-        m_boardGraphic = oldBoard.m_boardGraphic;
-        pTokenFactory = oldBoard.pTokenFactory;
-        boardArr = new Token[dimensions][dimensions];
-
-        for (int i = 0; i < dimensions; i++) {
-            for (int j = 0; j < dimensions; j++) {
-                boardArr[i][j] = pTokenFactory.Create();
-            }
-        }
-
-        for (int i = 1; i < dimensions; i++) {
-            for (int j = 1; j < dimensions; j++) {
-                boardArr[i][j] = oldBoard.boardArr[i][j];
-            }
-        }
-    }
-
 
     /**
      * @return the dimenstions of the board
@@ -74,29 +55,7 @@ public class Board {
         return this.dimensions;
     }
 
-    /**
-     * Draws the board.
-     */
-    public void draw()
-    {
-        m_boardGraphic.draw(boardArr);
-    }
 
-    /**
-     * @return if the board is full - true, else false
-     */
-    public boolean isFullOfTokens()
-    {
-        for (int i = 1; i < dimensions; i++) {
-            for (int j = 1; j < dimensions; j++) {
-                if (boardArr[i][j].isEmpty()) {
-                    return false;
-                }
-            }
-
-        }
-        return true;
-    }
 /**
  * @return the array of tokens.
  */
@@ -133,11 +92,6 @@ public class Board {
         sum[0] = black;
         sum[1] = white;
         return sum;
-    }
-
-    public BoardGraphic getBoardGraphic()
-    {
-        return this.m_boardGraphic;
     }
 
 }

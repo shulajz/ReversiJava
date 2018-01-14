@@ -1,4 +1,5 @@
-package boardgame;
+package reversiapp;
+import boardgame.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -6,8 +7,8 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import sample.GuiBoard;
-import sample.Menu;
+import reversiapp.GuiBoard;
+import reversiapp.Menu;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

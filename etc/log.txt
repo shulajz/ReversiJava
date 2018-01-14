@@ -1,0 +1,457 @@
+commit 3c1a924642a363f17972039b3715c6ad5ed7402c
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Sun Jan 14 01:20:02 2018 -0800
+
+    arrange the packages
+
+commit 72a78155b235893abefc8233ea3396bf9d1f6640
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sat Jan 13 18:01:45 2018 +0200
+
+    editing some stuff
+
+commit 7310f0809210f89b72bd1d0b41604168ce71f665
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sat Jan 13 17:59:10 2018 +0200
+
+    add a file
+
+commit a577bba2832278db98e66805102a7cd1fc2b8da4
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sat Jan 13 17:58:58 2018 +0200
+
+    add a file
+
+commit 13b89cbea5922e22e79da91103ee65a7f5ba72a7
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Jan 12 06:00:33 2018 -0800
+
+    some stylesheet
+
+commit 453363b50f963188503d26169f4cd7f0c2901a9d
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Jan 12 05:55:57 2018 -0800
+
+    some stylesheet
+
+commit cb6446781d32a8310b2a24a48ede6351bb61117c
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Jan 12 05:46:58 2018 -0800
+
+    some stylesheet
+
+commit 2e3d37e7493e5582e87ce6e9b84daa316aa971fb
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Jan 12 05:46:27 2018 -0800
+
+    some stylesheet
+
+commit 4270efb5b73a0db0ba0e9ab1d3513f41853c66fd
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Fri Jan 12 14:24:48 2018 +0200
+
+    adding resize
+
+commit a076333f849f343735e423a828310dafa0433d5f
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Jan 12 04:17:55 2018 -0800
+
+    settings and menu
+
+commit fcd3325196ea39850c4d6e58c8a868bbf8f5fbaf
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Fri Jan 12 03:55:33 2018 -0800
+
+    settings and menu
+
+commit 42eefdeee9604d72086076f4f5b8aed3453a1088
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Thu Jan 11 10:17:24 2018 -0800
+
+    settings and menu
+
+commit d56d406a7493025c3f8d4e1c1dd3f01a5f2dc9dd
+Merge: eca4e2a fe6b8aa
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Thu Jan 11 10:14:20 2018 -0800
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       src/boardgame/GuiBoard.java
+
+commit eca4e2a53fe15573a9703e32635428bb4cf3e213
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Thu Jan 11 10:12:03 2018 -0800
+
+    settings and menu
+
+commit 5f1d907c49621c7dda4f0630a272717f497a6c87
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Thu Jan 11 10:00:04 2018 -0800
+
+    settings and menu
+
+commit 927207ebe933d209747d5480202c37fc3d47af31
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Thu Jan 11 09:53:13 2018 -0800
+
+    settings and menu
+
+commit fe6b8aa2dca2dce31cfd7bf264351f720e27a67d
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Jan 11 19:13:50 2018 +0200
+
+    comment
+
+commit 756f8174e168f71ef203028758904cf65a4c9aae
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Thu Jan 11 07:41:56 2018 -0800
+
+    settings and menu
+
+commit c2576df3ffcd2d423d6456f027805108e4538787
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Jan 11 15:28:20 2018 +0200
+
+    comment
+
+commit 6595bac10c6fd9418a330fd06e3600b2d9cdd8c4
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Jan 11 15:25:10 2018 +0200
+
+    comment
+
+commit f0ac359728c9b01ce274908557b967d812215157
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Thu Jan 11 04:55:09 2018 -0800
+
+    settings and menu
+
+commit 48fac4236a4faabbdd6970bd4993845b6ca8a28e
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Thu Jan 11 04:06:12 2018 -0800
+
+    settings and menu
+
+commit 39867fa14dcbe0a33125483deab7f77ed5c84da8
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Thu Jan 11 04:02:00 2018 -0800
+
+    settings and menu
+
+commit a2b29f33fcb003777b3e50b89d339e113dfc2eda
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Thu Jan 11 02:51:11 2018 -0800
+
+    settings and menu
+
+commit 54545913fdeca3f00ae096370f4167199dbc6221
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Thu Jan 11 02:22:02 2018 -0800
+
+    settings and menu
+
+commit e934f9845a2c569cea64d24e03b294c41b8129f6
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Thu Jan 11 02:17:32 2018 -0800
+
+    settings and menu
+
+commit 6985bbac87e77bebed9361a301b2930c7914b15f
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Thu Jan 11 01:36:33 2018 -0800
+
+    settings and menu
+
+commit 835db35cb6843224e7c883cdb41a91b2882c0d42
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Wed Jan 10 17:07:20 2018 -0800
+
+    settings and menu
+
+commit 32c045f022c49e8c17e70e0e0b01bf66e87a2480
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Wed Jan 10 16:56:23 2018 -0800
+
+    settings and menu
+
+commit c2dc2e2db01b3a69c30e006c76556eeea0858131
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Wed Jan 10 16:44:41 2018 -0800
+
+    settings and menu
+
+commit 28a827985e607e16097f421e34b36d980fda3b92
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Wed Jan 10 14:43:10 2018 -0800
+
+    settings and menu
+
+commit fabf3dd8987ce4ddfd13d6d3b7a6d4eeb1ee39cd
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Wed Jan 10 14:34:18 2018 -0800
+
+    settings and menu
+
+commit 146455eb7632ca23c0d88890a499dc51a70b93b8
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Wed Jan 10 14:33:45 2018 -0800
+
+    settings and menu
+
+commit efc8749039747cb70412800e36ee9f2252f63739
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Wed Jan 10 20:59:04 2018 +0200
+
+    comment
+
+commit 738ca5eb548fae1b19c6b1721035a020f5124e64
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Wed Jan 10 10:45:09 2018 -0800
+
+    settings and menu
+
+commit c0c52d24dbac226d67fb0191e6e3b0019ee67d05
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Wed Jan 10 10:44:25 2018 -0800
+
+    settings and menu
+
+commit a21967f288757859c402b355f3a9e26d7cc07c97
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Wed Jan 10 10:21:31 2018 -0800
+
+    settings and menu
+
+commit 1d5f3166fbf5ef02e29a3fe751f4acc724da7d1e
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Wed Jan 10 10:10:20 2018 -0800
+
+    settings and menu
+
+commit 0c738f5635d725beff6ec312bae09e84fc8b0bd7
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Wed Jan 10 20:01:46 2018 +0200
+
+    comment
+
+commit 243f85dec41b7c8e354f183c3b860f905f045017
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Wed Jan 10 19:44:36 2018 +0200
+
+    comment
+
+commit 68bc83e962ef777bef789535130e805cba70f0c6
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Wed Jan 10 08:39:22 2018 -0800
+
+    settings and menu
+
+commit 10b93e2ed2b87582001ffdba211c850af112de5a
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Wed Jan 10 08:25:13 2018 -0800
+
+    settings and menu
+
+commit 81d3b2e798b0e29046cbc50b7949c78d5e4e9d6e
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Wed Jan 10 08:23:49 2018 -0800
+
+    settings and menu
+
+commit fe32e82d675b360ec6a5a64c567a8b79b295b483
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Jan 9 23:40:30 2018 +0200
+
+    comment
+
+commit b8804a03fcbefc236169970e9e534b6867cd57e8
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Jan 9 23:11:38 2018 +0200
+
+    comment
+
+commit c6fb2f82aebd19bcc53dd4c5de22253914bf8b0b
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Jan 9 23:04:51 2018 +0200
+
+    comment
+
+commit 6641e667a1bae2b1621ef1cb9fcefef121e9140a
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Jan 9 11:05:07 2018 -0800
+
+    settings and menu
+
+commit b47696a4c6beff641f371c587285ab02db411de9
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Jan 9 09:19:39 2018 -0800
+
+    settings and menu
+
+commit 2c6587d10f28255e7f19fa5ff0a33359c456572c
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Jan 9 09:03:26 2018 -0800
+
+    settings and menu
+
+commit 63cceedb9cd845943cc196430415f3e752875c0e
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Jan 9 09:03:08 2018 -0800
+
+    settings and menu
+
+commit c9f42a40e61f64012bc9d7dc0461993d6795c660
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Jan 9 08:54:31 2018 -0800
+
+    settings and menu
+
+commit 9ff4da0125f007c7622035dd0baac3d6aab7efdd
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Jan 9 08:53:11 2018 -0800
+
+    settings and menu
+
+commit b60e5225df4e026ea2be36ea15968f96b9f0f579
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Jan 9 06:58:15 2018 -0800
+
+    settings and menu
+
+commit 3db77cf25f1f6f9a7e2dedadb573a6bf337eea2c
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Jan 9 06:36:05 2018 -0800
+
+    settings and menu
+
+commit df9c676f6acf2bb1b6d32b0f7cc782ff1871d350
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Jan 9 06:33:47 2018 -0800
+
+    settings and menu
+
+commit f81550524883615c6130db21dde57dd1f4a64fe7
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Jan 9 06:32:15 2018 -0800
+
+    settings and menu
+
+commit 9498bee7659cf1654309875efd5f55af907be206
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Jan 9 06:20:04 2018 -0800
+
+    settings and menu
+
+commit 493cefc3fc546be188440b74ea0d40538fabd009
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Jan 9 06:19:11 2018 -0800
+
+    settings and menu
+
+commit 1fd0e7ff0548bcd60c7d150029bf31064b102163
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Jan 9 16:11:29 2018 +0200
+
+    comment
+
+commit 3db8ac0a1cc3e6537be1f0eee5bdafbb7a5a33ed
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Jan 9 16:06:34 2018 +0200
+
+    comment
+
+commit 9a13ba923937da493166ae3191c08587e593791a
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Jan 9 15:36:43 2018 +0200
+
+    comment
+
+commit 25b78d4309f9d23206e9bb439ac616b73fbf5b30
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Jan 9 15:10:09 2018 +0200
+
+    comment
+
+commit c78c2cbf4ddd60e8706545ae37afd0f7b8217fa7
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Jan 9 11:45:19 2018 +0200
+
+    comment
+
+commit 362b688037a55050ddf5d8b907c5451b302a81e8
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Jan 9 01:33:34 2018 -0800
+
+    settings and menu
+
+commit 1b6d5f7d695c128b21917d0203ef01131db6166a
+Merge: 0dc7971 27fae58
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Jan 8 15:44:53 2018 -0800
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       src/sample/MenuFXML.fxml
+
+commit 0dc7971198a3ee9e9b8f57d5dd96a5be70865a2c
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Jan 8 15:43:32 2018 -0800
+
+    settings and menu
+
+commit 27fae5837cf83f25ddb37efe959d2ca35c4b4946
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Mon Jan 8 23:50:10 2018 +0200
+
+    comment
+
+commit e742a93130688178a4da3635ab33c4e5e7f53de4
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Jan 8 13:47:10 2018 -0800
+
+    settings and menu
+
+commit ba14437a6acdfade38b9f4e9c45df6a98b6ee54d
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Jan 8 13:40:52 2018 -0800
+
+    settings and menu
+
+commit a97eb722f6932b89217fbd6dc7f32424e339a07e
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Jan 8 13:10:30 2018 -0800
+
+    settings and menu
+
+commit fbe01393430c222e34407b68a2ff11b04314f669
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Jan 8 11:07:27 2018 -0800
+
+    settings and menu
+
+commit c4e9ebbe577e8062eca19baa2f90f70e48967a0e
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Jan 8 05:39:17 2018 -0800
+
+    check
+
+commit 55848ce3e74783c6f4e982d4bc2d9634ca411b73
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Thu Jan 4 11:52:15 2018 -0800
+
+    check
+
+commit a5921e7d8589752b5cd1c9037e2260ce7d56944b
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Jan 4 21:51:05 2018 +0200
+
+    comment
+
+commit 0f67d88cf2dc8ff67acfeb57e46660f34854d7d5
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Thu Jan 4 18:27:55 2018 +0200
+
+    Initial commit

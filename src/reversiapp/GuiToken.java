@@ -1,11 +1,14 @@
-package boardgame;
+package reversiapp;
 
 
+import boardgame.Player;
+import boardgame.Token;
+import boardgame.TokenValue;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 
-public class GuiToken extends Token{
+public class GuiToken extends Token {
 
     public GuiToken() {
         tv = TokenValue.Empty;
