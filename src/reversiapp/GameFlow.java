@@ -17,6 +17,14 @@ public class GameFlow {
     private Player[] players;
     private GameRules gameRules;
     private ReversiGameController gameController;
+
+    /**
+     * GameFlow constructor.
+     * @param board
+     * @param players
+     * @param gameRules
+     * @param controller
+     */
     public GameFlow(Board board, Player players[],
                     GameRules gameRules, ReversiGameController controller){
 
@@ -25,13 +33,18 @@ public class GameFlow {
         this.players = players;
         this.board = board;
         TokenValue blackTv = TokenValue.Black;
-
         this.playerCurrentTurn = players[blackTv.getValue()];
 
     }
 
-    //in every clicked event we check if the click is valid coordinate
-    //if so we change it depend in the game rules, and the current player
+    /**
+     * this function in every clicked event we
+     * check if the click is valid coordinate
+     * if so we change it, depend in the game rules, and depend in
+     * the current player.
+     * @param row
+     * @param col
+     */
     public boolean clickEvent(double row, double col){
         List<Coordinate> validCoordinates = new ArrayList<Coordinate>();
         Coordinate coordinate = new Coordinate((int)row, (int)col);
@@ -79,8 +92,6 @@ public class GameFlow {
     public Situation checkGameFlowSituation(List<Coordinate> validCoordinates){
         gameRules.getLegalCoordinates(
                 board, playerCurrentTurn, validCoordinates);
-        //clear the possiblesMoves
-//        initializeBoard();
         if (validCoordinates.isEmpty()) {
             switchPlayer();
             //checking if other player has a move
@@ -98,11 +109,6 @@ public class GameFlow {
                 return NoMove;
             }
         }
-        //draw all the possiblesMoves
-//        drawPossibleMoves(validCoordinates);
         return ThereIsMove;
     }
-
-
-
 }

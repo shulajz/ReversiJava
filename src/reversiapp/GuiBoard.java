@@ -19,14 +19,20 @@ public class GuiBoard extends GridPane {
     private int cellSize;
     private Board board;
     private Player[] players;
-    private GameRules gameRules;
     private Player playerCurrentTurn;
     private ReversiGameController gameController;
     private GameFlow gameFlow;
-    public GuiBoard(Board board, Player players[],
-                    GameRules gameRules, ReversiGameController controller, GameFlow gameflow) {
+
+    /**
+     * constructor of GuiBoard.
+     * @param board
+     * @param players
+     * @param controller
+     * @param gameflow
+     */
+    public GuiBoard(Board board, Player players[]
+            , ReversiGameController controller, GameFlow gameflow) {
         this.gameController = controller;
-        this.gameRules = gameRules;
         this.players = players;
         this.board = board;
         this.gameFlow = gameflow;
@@ -48,6 +54,9 @@ public class GuiBoard extends GridPane {
         initializeBoard();
     }
 
+    /**
+     * initialize the board.
+     */
     public void initializeBoard(){
         for (int i = 1; i < board.getDimensions(); i++) {
             for (int j = 1; j < board.getDimensions(); j++) {
@@ -59,7 +68,12 @@ public class GuiBoard extends GridPane {
             }
         }
     }
-    //this function receives a rectangle and adds to him mouseClicked event
+
+    /**
+     * this function receives a rectangle and adds
+     * to him mouseClicked event.
+     * @param rec
+     */
     public void initializeRectangle(Rectangle rec){
         rec.setStroke(Color.BLACK);
         rec.setOnMouseClicked(event -> {
@@ -74,7 +88,7 @@ public class GuiBoard extends GridPane {
     }
 
     /**
-     * this method draws the tokens of the game
+     * this method draws the tokens of the game.
      * @param tokens
      */
     public void draw(Token[][] tokens) {
@@ -82,6 +96,8 @@ public class GuiBoard extends GridPane {
         //special situations in the game like no move for one player
         // or no move for all.
         List<Coordinate> validCoordinates = new ArrayList<Coordinate>();
+        //clear the possiblesMoves
+        initializeBoard();
         Situation situation = gameFlow.checkGameFlowSituation(validCoordinates);
         drawPossibleMoves(validCoordinates);
         for (int i = 1; i < board.getDimensions(); i++) {
@@ -91,9 +107,13 @@ public class GuiBoard extends GridPane {
         }
         handleSpecialSituationsInGame(situation);
     }
-    //this function checks if we're in special situations
-    // in the game like no move for one player or no move for all
-    // if so update the game manager about this that it will handle it
+
+    /**
+     * this function checks if we're in special situations
+     * in the game like no move for one player or no move for all
+     * if so update the game manager about this that it will handle it
+     * @param situation
+     */
     public void handleSpecialSituationsInGame(Situation situation){
         if(situation == NoMovesForAll){
             //check Who Win
@@ -114,7 +134,11 @@ public class GuiBoard extends GridPane {
             gameController.handleNoMove(playerCurrentTurn);
         }
     }
-    //draw all thw possibles moves in the board
+
+    /**
+     * draw all thw possibles moves in the board.
+     * @param validCoordinates
+     */
     public void drawPossibleMoves(List<Coordinate> validCoordinates){
         for(int i = 0; i < validCoordinates.size(); i++){
             int row = validCoordinates.get(i).getRow();
@@ -128,4 +152,3 @@ public class GuiBoard extends GridPane {
     }
 
 }
-//

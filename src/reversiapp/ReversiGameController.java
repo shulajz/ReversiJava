@@ -52,6 +52,12 @@ public class ReversiGameController implements Initializable {
     private Player[] players;
     private GuiBoard guiBoard;
     private Board board;
+
+    /**
+     * initialize ReversiGameController.
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle
             resources) {
@@ -63,7 +69,7 @@ public class ReversiGameController implements Initializable {
         initializePlayers();
         board = new Board(dim, classicRules.getInitialValues(dim));
         GameFlow gameFlow = new GameFlow(board, players, classicRules, this);
-        guiBoard = new GuiBoard(board, players, classicRules, this, gameFlow);
+        guiBoard = new GuiBoard(board, players,this, gameFlow);
 
         guiBoard.setPrefWidth(BOARD_SIZE);
         guiBoard.setPrefHeight(BOARD_SIZE);
@@ -81,9 +87,11 @@ public class ReversiGameController implements Initializable {
             guiBoard.setPrefHeight(newValue.doubleValue());
             guiBoard.draw(board.getTokens());
         });
-
     }
 
+    /**
+     * display the players score on the screen.
+     */
     public void displayPlayersScore(){
         if (open_player == PLAYER1) {
             player1Score.setText(color_player1_name + " score:");
@@ -93,6 +101,10 @@ public class ReversiGameController implements Initializable {
             player2Score.setText(color_player1_name + " score:");
         }
     }
+
+    /**
+     * read the the setting file.
+     */
     public void readFromSettingsFile() {
         try (BufferedReader br = new BufferedReader
                 (new FileReader("settingsFile.txt"))) {
@@ -108,6 +120,11 @@ public class ReversiGameController implements Initializable {
         }
     }
 
+    /**
+     * get string of the file and initialize the
+     * members depend the stringFile.
+     * @param stringFile
+     */
     public void getSettings(String stringFile) {
         String[] lines = stringFile.split("\n");
         for (int i = 0; i < lines.length; i++) {
@@ -135,6 +152,9 @@ public class ReversiGameController implements Initializable {
         }
     }
 
+    /**
+     * initialize players.
+     */
     public void initializePlayers() {
         players = new Player[2];
         if (open_player == PLAYER1) {
@@ -149,15 +169,33 @@ public class ReversiGameController implements Initializable {
         }
     }
 
+    /**
+     * set text of the label currPlayer.
+     * @param tv
+     */
     public void setCurrentPlayer(String tv) {
         currPlayer.setText(tv);
     }
+
+    /**
+     * set text of the label whiteScore.
+     * @param whiteScore1
+     */
     public void setWhiteScore(String whiteScore1) {
         whiteScore.setText(whiteScore1);
     }
+
+    /**
+     * set text of the label blackScore.
+     * @param blackScore1
+     */
     public void setBlackScore(String blackScore1) {
         blackScore.setText(blackScore1);
     }
+
+    /**
+     * this function return to the menu stage.
+     */
     @FXML
     protected void returnToMenu(){
         //return to the menu
@@ -169,8 +207,13 @@ public class ReversiGameController implements Initializable {
 
         }
     }
+
+    /**
+     * handle end game situation.
+     * @param winnerPlayer
+     */
     public void handleEndGame(Player winnerPlayer){
-        //guiBoard.setDisable(true);
+
         if(winnerPlayer == players[0]) {//black win
             if (open_player == PLAYER1){
                 alert.setHeaderText("game over! " + color_player1_name + " wins");
@@ -189,6 +232,10 @@ public class ReversiGameController implements Initializable {
         alert.showAndWait();
     }
 
+    /**
+     * handle no move situation.
+     * @param player
+     */
     public void handleNoMove(Player player){
         alert.setHeaderText("sorry, you have no move");
         alert.showAndWait();
@@ -199,8 +246,5 @@ public class ReversiGameController implements Initializable {
                 currPlayer.setText(color_player2_name);
             }
             guiBoard.draw(board.getTokens());
-
     }
-
 }
-
