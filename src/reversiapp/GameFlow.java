@@ -111,4 +111,32 @@ public class GameFlow {
         }
         return ThereIsMove;
     }
+
+    /**
+     * this function checks if we're in special situations
+     * in the game like no move for one player or no move for all
+     * if so update the game manager about this that it will handle it
+     * @param situation
+     */
+    public void handleSpecialSituationsInGame(Situation situation){
+        if(situation == NoMovesForAll){
+            //check Who Win
+            int[] sumScore = board.calcResults();
+            int blackPlayer = sumScore[0];
+            int whitePlayer = sumScore[1];
+            Player winnerPlayer;
+            if(blackPlayer > whitePlayer) { //black wins
+                winnerPlayer = players[0];
+            } else if (blackPlayer < whitePlayer){ //white wins
+                winnerPlayer = players[1];
+            }else {//tie
+                winnerPlayer = null;
+            }
+            gameController.handleEndGame(winnerPlayer);
+
+        }else if (situation == NoMove){
+            gameController.handleNoMove(playerCurrentTurn);
+        }
+    }
+
 }
