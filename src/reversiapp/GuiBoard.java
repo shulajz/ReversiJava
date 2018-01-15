@@ -19,7 +19,6 @@ public class GuiBoard extends GridPane {
     private int cellSize;
     private Board board;
     private Player[] players;
-    private Player playerCurrentTurn;
     private ReversiGameController gameController;
     private GameFlow gameFlow;
 
@@ -46,8 +45,6 @@ public class GuiBoard extends GridPane {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
-        TokenValue blackTv = TokenValue.Black;
-        this.playerCurrentTurn = players[blackTv.getValue()];
         this.getChildren().clear();
         int width = (int)this.getPrefWidth();
         cellSize = width / board.getDimensions();
