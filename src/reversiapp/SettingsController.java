@@ -18,7 +18,7 @@ public class SettingsController {
                     "red", "orange", "pink", "brown", "purple", "gray");
     ObservableList<String> sizes = FXCollections.
             observableArrayList("4x4", "6x6", "8x8","10x10", "12x12", "14x14",
-                    "16x16","18x18", "20x20"
+                    "16x16", "18x18", "20x20"
                     );
     ObservableList<String> players = FXCollections.
             observableArrayList("player1", "player2");
