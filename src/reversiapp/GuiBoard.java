@@ -22,12 +22,14 @@ public class GuiBoard extends GridPane {
     private GameRules gameRules;
     private Player playerCurrentTurn;
     private ReversiGameController gameController;
+    private GameFlow gameFlow;
     public GuiBoard(Board board, Player players[],
-                    GameRules gameRules, ReversiGameController controller) {
+                    GameRules gameRules, ReversiGameController controller, GameFlow gameflow) {
         this.gameController = controller;
         this.gameRules = gameRules;
         this.players = players;
         this.board = board;
+        this.gameFlow = gameflow;
         FXMLLoader fxmlLoader = new
                 FXMLLoader(getClass().getResource("BoardFXML.fxml"));
         fxmlLoader.setRoot(this);
@@ -57,14 +59,18 @@ public class GuiBoard extends GridPane {
             }
         }
     }
+    //this function receives a rectangle and adds to him mouseClicked event
+    public void initializeRectangle(Rectangle rec){
+        rec.setStroke(Color.BLACK);
+        rec.setOnMouseClicked(event -> {
+            double row = Math.ceil(event.getSceneY() / cellSize);
+            double col = Math.ceil(event.getSceneX() / cellSize);
+            boolean isValid = gameFlow.clickEvent(row, col);
+            if(isValid){
+                draw(board.getTokens());
+            }
 
-    public void switchPlayer() {
-        if (playerCurrentTurn.getValue() == TokenValue.White) {
-            playerCurrentTurn = players[0];
-        } else if (playerCurrentTurn.getValue() == TokenValue.Black) {
-            playerCurrentTurn = players[1];
-
-        }
+        });
     }
 
     /**
@@ -75,7 +81,9 @@ public class GuiBoard extends GridPane {
         //before every draw of the current board check if we're in a
         //special situations in the game like no move for one player
         // or no move for all.
-        Situation situation = checkGameFlowSituation();
+        List<Coordinate> validCoordinates = new ArrayList<Coordinate>();
+        Situation situation = gameFlow.checkGameFlowSituation(validCoordinates);
+        drawPossibleMoves(validCoordinates);
         for (int i = 1; i < board.getDimensions(); i++) {
             for (int j = 1; j < board.getDimensions(); j++) {
                 tokens[i][j].draw(i, j, this, cellSize/2, players);
@@ -87,7 +95,6 @@ public class GuiBoard extends GridPane {
     // in the game like no move for one player or no move for all
     // if so update the game manager about this that it will handle it
     public void handleSpecialSituationsInGame(Situation situation){
-
         if(situation == NoMovesForAll){
             //check Who Win
             int[] sumScore = board.calcResults();
@@ -107,73 +114,6 @@ public class GuiBoard extends GridPane {
             gameController.handleNoMove(playerCurrentTurn);
         }
     }
-    //in every clicked event we check if the click is valid coordinate
-    //if so we change it depend in the game rules, and the current player
-    public void clickEvent(double row, double col){
-        List<Coordinate> validCoordinates = new ArrayList<Coordinate>();
-        Coordinate coordinate = new Coordinate((int)row, (int)col);
-        gameRules.getLegalCoordinates(
-                board, playerCurrentTurn, validCoordinates);
-        if (!validCoordinates.isEmpty()) { //the player has a turn
-            for (int k = 0; k < validCoordinates.size(); k++) {
-                //checks if the input is one of the legal coordinates
-                if (row == validCoordinates.get(k).getRow()
-                        && col == validCoordinates.get(k).getCol()) {
-                    board.updateValue(coordinate, playerCurrentTurn.getValue());
-                    gameRules.flipTokens(coordinate, board,
-                            playerCurrentTurn);
-                    switchPlayer();
-                    int[] sumScore = board.calcResults();
-                    int black = sumScore[0];
-                    int white = sumScore[1];
-                    gameController.setBlackScore(Integer.toString(black));
-                    gameController.setWhiteScore(Integer.toString(white));
-                    gameController.setCurrentPlayer(playerCurrentTurn.getColorName());
-                    //if this the chosen rectangle we do the event and draw
-                    draw(board.getTokens());
-                    break;//don't need to check more coordinate
-                }
-            }
-        }
-    }
-
-    public Situation checkGameFlowSituation(){
-
-        List<Coordinate> validCoordinates = new ArrayList<Coordinate>();
-        gameRules.getLegalCoordinates(
-                board, playerCurrentTurn, validCoordinates);
-        //clear the possiblesMoves
-        initializeBoard();
-        if (validCoordinates.isEmpty()) {
-            switchPlayer();
-            //checking if other player has a move
-            List<Coordinate> validCoordinates1 = new ArrayList<Coordinate>();
-
-            gameRules.getLegalCoordinates(
-                    board, playerCurrentTurn, validCoordinates1);
-            switchPlayer();
-            //the player doesn't have any moves
-            if (validCoordinates1.isEmpty()) {//no moves for all
-
-                return NoMovesForAll;
-            } else { //no moves only for current player
-                switchPlayer();
-                return NoMove;
-            }
-        }
-        //draw all the possiblesMoves
-        drawPossibleMoves(validCoordinates);
-        return ThereIsMove;
-    }
-    //this function receives a rectangle and adds to him mouseClicked event
-    public void initializeRectangle(Rectangle rec){
-        rec.setStroke(Color.BLACK);
-        rec.setOnMouseClicked(event -> {
-            double row = Math.ceil(event.getSceneY() / cellSize);
-            double col = Math.ceil(event.getSceneX() / cellSize);
-            clickEvent(row, col);
-        });
-    }
     //draw all thw possibles moves in the board
     public void drawPossibleMoves(List<Coordinate> validCoordinates){
         for(int i = 0; i < validCoordinates.size(); i++){
@@ -183,8 +123,9 @@ public class GuiBoard extends GridPane {
                     Color.DARKGREEN);
             initializeRectangle(rec);
             //add to the gridPane
-            this.add(rec, col, row);
+            add(rec, col, row);
         }
     }
+
 }
 //

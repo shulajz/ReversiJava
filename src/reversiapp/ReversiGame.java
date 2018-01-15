@@ -20,8 +20,6 @@ public class ReversiGame extends Application {
                     "applicationReversiGameController.css").toExternalForm());
             primaryStage.setTitle("Othello game");
             primaryStage.setScene(scene);
-//            primaryStage.setMinHeight(SCENE_SIZE_HEIGHT);
-//            primaryStage.setMinWidth(SCENE_SIZE_WIDTH);
             primaryStage.show();
         } catch(Exception e) {
             e.printStackTrace();

@@ -44,20 +44,20 @@ public class Board {
                     setValue(initialCells.get(i).getTokenValue());
         }
 
-        for(int i = 1; i < 5; i++) {
-            for (int j = 1; j < 5; j++) {
-                boardArr[i][j].setValue(Empty);
-            }
-        }
-        boardArr[1][3].setValue(White);
-        boardArr[2][3].setValue(White);
-        boardArr[3][3].setValue(White);
-        boardArr[4][3].setValue(White);
-
-        boardArr[1][4].setValue(Black);
-        boardArr[2][4].setValue(Black);
-        boardArr[3][4].setValue(Black);
-        boardArr[4][4].setValue(Black);
+//        for(int i = 1; i < 5; i++) {
+//            for (int j = 1; j < 5; j++) {
+//                boardArr[i][j].setValue(Empty);
+//            }
+//        }
+//        boardArr[1][3].setValue(White);
+//        boardArr[2][3].setValue(White);
+//        boardArr[3][3].setValue(White);
+//        boardArr[4][3].setValue(White);
+//
+//        boardArr[1][4].setValue(Black);
+//        boardArr[2][4].setValue(Black);
+//        boardArr[3][4].setValue(Black);
+//        boardArr[4][4].setValue(Black);
     }
 
 
