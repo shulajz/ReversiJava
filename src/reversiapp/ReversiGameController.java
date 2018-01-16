@@ -69,7 +69,7 @@ public class ReversiGameController implements Initializable {
         initializePlayers();
         board = new Board(dim, classicRules.getInitialValues(dim));
         GameFlow gameFlow = new GameFlow(board, players, classicRules, this);
-        guiBoard = new GuiBoard(board, players,this, gameFlow);
+        guiBoard = new GuiBoard(board, players, gameFlow);
 
         guiBoard.setPrefWidth(BOARD_SIZE);
         guiBoard.setPrefHeight(BOARD_SIZE);

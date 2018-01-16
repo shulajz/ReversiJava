@@ -19,19 +19,15 @@ public class GuiBoard extends GridPane {
     private int cellSize;
     private Board board;
     private Player[] players;
-    private ReversiGameController gameController;
     private GameFlow gameFlow;
 
     /**
      * constructor of GuiBoard.
      * @param board
      * @param players
-     * @param controller
      * @param gameflow
      */
-    public GuiBoard(Board board, Player players[]
-            , ReversiGameController controller, GameFlow gameflow) {
-        this.gameController = controller;
+    public GuiBoard(Board board, Player players[], GameFlow gameflow) {
         this.players = players;
         this.board = board;
         this.gameFlow = gameflow;
