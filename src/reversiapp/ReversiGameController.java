@@ -239,9 +239,17 @@ public class ReversiGameController implements Initializable {
         alert.showAndWait();
 
             if (player == players[0]){
-                currPlayer.setText(color_player1_name);
+                if (open_player == PLAYER1){
+                    currPlayer.setText(color_player1_name);
+                }else{
+                    currPlayer.setText(color_player2_name);
+                }
             }else{
-                currPlayer.setText(color_player2_name);
+                if (open_player == PLAYER1){
+                    currPlayer.setText(color_player2_name);
+                }else{
+                    currPlayer.setText(color_player1_name);
+                }
             }
             guiBoard.draw(board.getTokens());
     }
