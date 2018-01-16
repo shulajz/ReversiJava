@@ -12,6 +12,9 @@ public class MenuController {
     private Button startGame;
     private boolean userDoSettings = false;
 
+    /**
+     * this method goes to the setting scene
+     */
     @FXML
     protected void openSettings() {
 
@@ -23,6 +26,10 @@ public class MenuController {
 
         }
     }
+
+    /**
+     * this method starts the game
+     */
     @FXML
     protected void startGame() {
         userDoSettings =  true;

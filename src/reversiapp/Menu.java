@@ -36,10 +36,6 @@ public class Menu extends Application {
                     "menuApplication.css").toExternalForm());
             primaryStage.setTitle("Menu");
             primaryStage.setScene(scene);
-//            primaryStage.setMinHeight(SCENE_SIZE/2);
-//            primaryStage.setMinWidth(SCENE_SIZE);
-
-
 
             primaryStage.show();
         } catch (Exception e) {

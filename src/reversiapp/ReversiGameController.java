@@ -18,8 +18,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ReversiGameController implements Initializable {
-//    Alert alert = new Alert(AlertType.INFORMATION);
-
 
     final static int PLAYER1 = 0;
     final static int PLAYER2 = 1;

@@ -48,18 +48,17 @@ public class SettingsController {
         sameColorMessageLabel.setVisible(false);
 
     }
+
+    /**
+     * this method saves the setting of the user and goes back to the menu
+     */
     @FXML
     protected void goBackToMenu()  {
         String startPlayer = open_player.getValue().toString();
         String colorPlayer1 = color_player1.getValue().toString();
         String colorPlayer2 = color_player2.getValue().toString();
         String b_size = board_size.getValue().toString();
-        if(colorPlayer1.equals(colorPlayer2)) {
-            sameColorMessageLabel.setVisible(true);
-            sameColorMessageLabel.setOnMouseClicked(event -> {
-                sameColorMessageLabel.setVisible(false);
-                });
-        }
+
 
         writeToSettingFile(startPlayer,
                 colorPlayer1, colorPlayer2, b_size);
@@ -73,6 +72,14 @@ public class SettingsController {
 
         }
     }
+
+    /**
+     * This method writes to file
+     * @param startPlayer
+     * @param colorPlayer1
+     * @param colorPlayer2
+     * @param b_size
+     */
     private void writeToSettingFile(String startPlayer,
                                     String colorPlayer1, String colorPlayer2, String b_size){
         Writer writer = createNewFile();
@@ -90,6 +97,10 @@ public class SettingsController {
 
 
     }
+
+    /**
+     * This method creats a new file
+     */
     public Writer createNewFile() {
 
         BufferedWriter output = null;
