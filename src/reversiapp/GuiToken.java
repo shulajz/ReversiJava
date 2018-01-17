@@ -24,13 +24,25 @@ public class GuiToken extends Token {
      */
     public void draw(int i, int j, GridPane gridPane, int radius, Player[] players) {
         if (tv == TokenValue.Black){
-            Circle circle = new Circle(i, j, radius, players[0].getColor());
-            circle.setStroke(Color.BLACK);
-            gridPane.add(circle, j, i);
+            if(players[0].getValue() == TokenValue.Black) {
+                Circle circle = new Circle(i, j, radius, players[0].getColor());
+                circle.setStroke(Color.BLACK);
+                gridPane.add(circle, j, i);
+            } else {
+                Circle circle = new Circle(i, j, radius, players[1].getColor());
+                circle.setStroke(Color.BLACK);
+                gridPane.add(circle, j, i);
+            }
         }else if(tv == TokenValue.White){
-            Circle circle = new Circle(i, j, radius, players[1].getColor());
-            circle.setStroke(Color.BLACK);
-            gridPane.add(circle, j, i);
+            if(players[1].getValue() == TokenValue.Black) {
+                Circle circle = new Circle(i, j, radius, players[0].getColor());
+                circle.setStroke(Color.BLACK);
+                gridPane.add(circle, j, i);
+            } else {
+                Circle circle = new Circle(i, j, radius, players[1].getColor());
+                circle.setStroke(Color.BLACK);
+                gridPane.add(circle, j, i);
+            }
 
         }
     }

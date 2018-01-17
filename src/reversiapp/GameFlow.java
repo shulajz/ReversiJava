@@ -77,10 +77,10 @@ public class GameFlow {
      * switch between the players for the current turn.
      */
     public void switchPlayer() {
-        if (playerCurrentTurn.getValue() == TokenValue.White) {
-            playerCurrentTurn = players[0];
-        } else if (playerCurrentTurn.getValue() == TokenValue.Black) {
+        if (playerCurrentTurn.getValue() == players[0].getValue()) {
             playerCurrentTurn = players[1];
+        } else if (playerCurrentTurn.getValue() == players[1].getValue()) {
+            playerCurrentTurn = players[0];
 
         }
     }

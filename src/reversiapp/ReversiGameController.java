@@ -86,18 +86,13 @@ public class ReversiGameController implements Initializable {
             guiBoard.draw(board.getTokens());
         });
     }
-
     /**
      * display the players score on the screen.
      */
     public void displayPlayersScore(){
-        if (open_player == PLAYER1) {
             player1Score.setText(color_player1_name + " score:");
             player2Score.setText(color_player2_name + " score:");
-        }else{
-            player1Score.setText(color_player2_name + " score:");
-            player2Score.setText(color_player1_name + " score:");
-        }
+
     }
 
     /**
@@ -158,11 +153,11 @@ public class ReversiGameController implements Initializable {
         if (open_player == PLAYER1) {
             currPlayer.setText(color_player1_name);
             players[0] = new RealPlayer(TokenValue.Black, color_player1,color_player1_name);
-            players[1] = new RealPlayer(TokenValue.White, color_player2, color_player2_name );
+            players[1] = new RealPlayer(TokenValue.White, color_player2, color_player2_name);
         } else {
             currPlayer.setText(color_player2_name);
-            players[0] = new RealPlayer(TokenValue.Black, color_player2, color_player2_name);
-            players[1] = new RealPlayer(TokenValue.White, color_player1, color_player1_name);
+            players[0] = new RealPlayer(TokenValue.White, color_player2, color_player2_name);
+            players[1] = new RealPlayer(TokenValue.Black, color_player1, color_player1_name);
 
         }
     }
