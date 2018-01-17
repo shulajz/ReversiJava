@@ -1,4 +1,0 @@
-startPlayer: player1
-colorPlayer1: black
-colorPlayer2: white
-sizeBoard: 8x8

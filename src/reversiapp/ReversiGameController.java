@@ -40,7 +40,7 @@ public class ReversiGameController implements Initializable {
     private Label  player1Score;
     @FXML
     private Label  player2Score;
-//
+
     private String color_player1_name = "black";//default
     private String color_player2_name = "white";//default
     private int dim = DEFAULT_BOARD_DIM + 1;//default
