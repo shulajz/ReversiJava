@@ -1,3 +1,133 @@
+commit 1257c97b228b2074f94afa41decb174669a5ecc3
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Tue Jan 16 01:27:54 2018 -0800
+
+    change in handleNoMove
+
+commit cd229aa4f85878186a0f50d76fd5ca50978e5a21
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Jan 16 10:38:40 2018 +0200
+
+    adding comments
+
+commit b0f492205261de42cee1c7e9b665f8d8e6f33931
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Tue Jan 16 10:30:28 2018 +0200
+
+    editing
+
+commit 5f0d7dea3a81809d7a93b13a4ad7d89e669076db
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Mon Jan 15 18:17:55 2018 +0200
+
+    editing
+
+commit ff5b33178f823fa013e8fa1e01b321cb8055651c
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Mon Jan 15 18:12:01 2018 +0200
+
+    editing
+
+commit c4e82f116dd48fec7810e973baf7d0fce5cbd967
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Mon Jan 15 18:10:16 2018 +0200
+
+    editing
+
+commit 467dae600f9faf5e9885ac3190bb1622ff9ce01e
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Mon Jan 15 18:09:40 2018 +0200
+
+    editing
+
+commit 0a12b05d9081000e995c0bb9f4f117ab0013ef68
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Mon Jan 15 08:06:45 2018 -0800
+
+    some changes
+
+commit 245434dc19d7f7e1c53cc4fd6982a349041ce785
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Mon Jan 15 16:55:07 2018 +0200
+
+    adding a gameFlow
+
+commit 632ac64d6f3978d76740e0d55955bb90ae5d6655
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Jan 14 19:03:45 2018 +0200
+
+    editing
+
+commit 9b2f4c40d457173d654242073611d279865bc360
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Sun Jan 14 08:58:05 2018 -0800
+
+    arrange the packages
+
+commit 4f5743a037ccad37def8a72192932e768f582c12
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Jan 14 18:33:09 2018 +0200
+
+    adding alert
+
+commit ba98cda0ab23e4d339b35d09c054b74355a0b9e0
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Sun Jan 14 06:13:53 2018 -0800
+
+    arrange the packages
+
+commit f2ba4c2a240b45413b39113c5a8847d9e48cbd94
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Jan 14 14:23:27 2018 +0200
+
+    changing sizes
+
+commit d3ffbcba7dde93b6e4bab26bc01398691df000d1
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Jan 14 13:54:38 2018 +0200
+
+    editing some stuff
+
+commit ac08d30fb79fa0b3c8ce72e650c77e6433af82d1
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Jan 14 13:52:22 2018 +0200
+
+    editing some stuff
+
+commit 0119ac16db37bf3120cdbcfa3d5a33501497a79a
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Jan 14 12:31:24 2018 +0200
+
+    editing some stuff
+
+commit 007fbe400095b7c380698c5cbf5ad3074a34aa8a
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Jan 14 12:24:13 2018 +0200
+
+    editing some stuff
+
+commit 9106e5c501a926f2de2d1e582932662ebcf4215e
+Merge: c112023 02ea043
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Jan 14 12:23:33 2018 +0200
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       src/reversiapp/ReversiGameController.java
+
+commit c112023cf91985306e28c95ff74993f5ed5cacd4
+Author: Shulamit Ajzner <shulajz@gmail.com>
+Date:   Sun Jan 14 12:22:33 2018 +0200
+
+    editing some stuff
+
+commit 02ea043248303e9e96f97b32d395f3e0ac23f405
+Author: Or Shaashua <orshaashua@gmail.com>
+Date:   Sun Jan 14 01:58:35 2018 -0800
+
+    arrange the packages
+
 commit 3c1a924642a363f17972039b3715c6ad5ed7402c
 Author: Or Shaashua <orshaashua@gmail.com>
 Date:   Sun Jan 14 01:20:02 2018 -0800
